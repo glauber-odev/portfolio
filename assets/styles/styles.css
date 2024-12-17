@@ -1,0 +1,65 @@
+body{
+    background-color: var(--color-2);
+}
+
+/* INÍCIO DOBRA HEADER */
+
+.nav-menu__container{
+    height: 70px;
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, var(--color-1) 0%,  var(--color-1) 55%, rgba(0,0,0,0) 100%);
+    padding-bottom: 20px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-menu__logo-wrapper{
+    margin-left: 20px;
+}
+
+.nav-menu__itens{
+    margin-right: 35px;    
+}
+
+.nav-menu__logo-wrapper__first-logo{
+    height: 60px;
+    padding: 8px;
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+
+.nav-menu__logo-wrapper__second-logo{
+    height: 25px;
+    margin-top: 20px;
+    margin-left: 10px;
+    background-color: #ffffff;
+}
+
+.nav-menu__itens {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-menu__itens > a {
+    text-decoration: none;
+    margin-right: 25px;
+    color: var(--color-2);    
+}
+
+.nav-menu__itens__contact-me-link{
+    border: 2px solid var(--color-2);
+    border-radius: 12px;
+    padding: 5px;
+}
+
+.nav-menu__itens__line{
+    width: 100%;
+    background-color: var(--color-2);
+    height: 3px;
+    border-radius: 25%;
+}
+
+/* FIM DOBRA HEADER */
+

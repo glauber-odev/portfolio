@@ -1,0 +1,23 @@
+:root{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14pt;
+    font-weight: 500;
+    color: var(--color-2);
+
+    --color-1: #ffffff;
+    --color-2: #181818;
+}
+
+*{
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
