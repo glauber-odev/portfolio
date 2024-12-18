@@ -16,6 +16,7 @@ body{
 
 .nav-menu__logo-wrapper{
     margin-left: 20px;
+    cursor: pointer;
 }
 
 .nav-menu__itens{
@@ -45,13 +46,17 @@ body{
 .nav-menu__itens > a {
     text-decoration: none;
     margin-right: 25px;
-    color: var(--color-2);    
+    color: var(--color-2);
+    cursor: pointer;  
 }
 
 .nav-menu__itens__contact-me-link{
     border: 2px solid var(--color-2);
-    border-radius: 12px;
-    padding: 5px;
+    border-radius: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 4px;
+    padding-bottom: 7px;
 }
 
 .nav-menu__itens__line{
