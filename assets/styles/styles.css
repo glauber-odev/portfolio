@@ -7,6 +7,14 @@ body {
 
 /* INÍCIO DOBRA HEADER */
 
+.header {
+  position: fixed;
+  width: 100%;
+  margin-bottom: 70px;
+  top: 0;
+  left: 0;
+}
+
 .nav-menu__container {
   height: 70px;
   background: rgb(2, 0, 36);
@@ -87,24 +95,50 @@ body {
   }
 }
 
+.nav-menu__itens > li:hover ul {
+  /*--- DROP-DOWN-MENU PROPERTIES ---*/
+  /* display: block; */
+  visibility: visible;
+  height: 200px;
+}
+
 .nav-menu__itens__line {
   width: 0%;
   background-color: var(--color-3);
   height: 3px;
   border-radius: 3px;
-  transition: 0.2s ease-in-out;
+  transition: 0.08s ease-in;
 }
 
 .nav-menu__itens ul {
+  width: 100px;
+  background-color: var(--color-1);
+
+  z-index: 30;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+
   /*--- DROP-DOWN-MENU PROPERTIES ---*/
-  display: none;
+  /* display: none; */
+  visibility: hidden;
   position: absolute;
   left: 0;
+  height: 0px;
 }
 
-.nav-menu__itens > li:hover ul {
-  /*--- DROP-DOWN-MENU PROPERTIES ---*/
-  display: block;
+.nav-menu__itens ul > li {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10pt;
+  border: 1px solid var(--color-2);
+  list-style: none;
+}
+
+.nav-menu__itens ul > li > a {
+  text-decoration: none;
+  color: var(--color-2);
 }
 
 .nav-menu__itens__contact-me-link {
@@ -127,3 +161,21 @@ body {
   opacity: 1;
 }
 /* FIM DOBRA HEADER */
+
+
+/* INICIO DOBRA BACK-START ICON */
+.back-start-icon {
+  position: fixed;
+  right: 10;
+  bottom: 10;
+}
+/* FIM DOBRA BACK-START ICON */
+
+
+/* INICIO DOBRA APRESENTAÇÃO  */
+
+.banner__container {
+  margin-top: 80px;
+}
+
+/* FIM DOBRA APRESENTAÇÃO */
