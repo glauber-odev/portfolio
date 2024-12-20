@@ -1,101 +1,129 @@
 body {
-    background-color: var(--color-1);
-    color: var(--color-2);
+  background-color: var(--color-1);
+  color: var(--color-2);
 
-    transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
 }
 
 /* INÍCIO DOBRA HEADER */
 
 .nav-menu__container {
-    height: 70px;
-    background: rgb(2,0,36);
-    background: linear-gradient(180deg, var(--color-1) 0%,  var(--color-1) 55%, rgba(0,0,0,0) 100%);
-    padding-bottom: 20px;
+  height: 70px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    180deg,
+    var(--color-1) 0%,
+    var(--color-1) 55%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  padding-bottom: 20px;
 
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .nav-menu__logo-wrapper {
-    margin-left: 20px;
-    cursor: pointer;
+  margin-left: 20px;
+  cursor: pointer;
 
-    opacity: 0.95;
-    transition: all .6s ease-in-out;
+  opacity: 0.95;
+  transition: all 0.6s ease-in-out;
 }
 
 .nav-menu__logo-wrapper:hover {
-    transform: scale(1.05);
-    transition: .6s ease-in-out;
+  transform: scale(1.05);
+  transition: 0.6s ease-in-out;
 }
 
 .nav-menu__itens {
-    margin-right: 35px;    
+  margin-right: 35px;
 }
 
 .nav-menu__logo-wrapper__first-logo {
-    height: 60px;
-    padding: 8px;
-    background-color: #ffffff;
-    border-radius: 50%;
+  height: 60px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-radius: 50%;
 }
 
 .nav-menu__logo-wrapper__second-logo {
-    height: 25px;
-    margin-top: 20px;
-    margin-left: 10px;
-    background-color: #ffffff;
+  height: 25px;
+  margin-top: 20px;
+  margin-left: 10px;
+  background-color: #ffffff;
 }
 
 .nav-menu__itens {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  /*ul*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.nav-menu__itens > a {
-    text-decoration: none;
-    margin-right: 25px;
-    color: var(--color-2);
-    cursor: pointer;
-    opacity: 0.7;
+.nav-menu__itens > li {
+  margin-right: 25px;
+  cursor: pointer;
+  opacity: 0.7;
+  list-style: none;
+
+  /*--- DROP-DOWN-MENU PROPERTIES ---*/
+  display: inline;
+  position: relative;
 }
 
-.nav-menu__itens > a:hover {
-    opacity: 1;
+.nav-menu__itens > li > a {
+  text-decoration: none;
+  color: var(--color-2);
 
-    .nav-menu__itens__line {
-        width: 100%;   
-    }
+  /*--- DROP-DOWN-MENU PROPERTIES ---*/
+  display: block;
 }
 
-.nav-menu__itens__contact-me-link {
-    border: 2px solid var(--color-2);
-    border-radius: 25px;
-    padding-left: 12px;
-    padding-right: 12px;
-    padding-top: 4px;
-    padding-bottom: 7px;
-    
+.nav-menu__itens > li:hover {
+  opacity: 1;
+
+  .nav-menu__itens__line {
+    width: 100%;
+  }
 }
 
 .nav-menu__itens__line {
-    width: 0%;
-    background-color: var(--color-3);
-    height: 3px;
-    border-radius: 3px;
-    transition: .2s ease-in-out ;
+  width: 0%;
+  background-color: var(--color-3);
+  height: 3px;
+  border-radius: 3px;
+  transition: 0.2s ease-in-out;
+}
+
+.nav-menu__itens ul {
+  /*--- DROP-DOWN-MENU PROPERTIES ---*/
+  display: none;
+  position: absolute;
+  left: 0;
+}
+
+.nav-menu__itens > li:hover ul {
+  /*--- DROP-DOWN-MENU PROPERTIES ---*/
+  display: block;
+}
+
+.nav-menu__itens__contact-me-link {
+  border: 2px solid var(--color-2);
+  border-radius: 25px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 4px;
+  padding-bottom: 7px;
 }
 
 .nav-menu__toggle-layout_mode {
-    opacity: 0.9;
+  opacity: 0.9;
 
-    transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
 }
 
 .nav-menu__toggle-layout_mode:hover {
-    opacity: 1;
+  opacity: 1;
 }
 /* FIM DOBRA HEADER */
-
