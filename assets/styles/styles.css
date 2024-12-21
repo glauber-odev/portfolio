@@ -163,82 +163,129 @@ body {
 }
 /* FIM DOBRA HEADER */
 
-
 /* INICIO DOBRA BACK-START ICON */
 .back-start-icon__container {
-    background-color: var(--color-1);
-    border-radius: 50%;
-    border: 3px solid var(--color-2);
-    width: 45px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: var(--color-1);
+  border-radius: 50%;
+  border: 3px solid var(--color-2);
+  width: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   position: fixed;
-    right: 60px;
-    bottom: 60px;
+  right: 60px;
+  bottom: 60px;
 
-    transition: .2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 .back-start-icon__container img {
-    width: 40px;
+  width: 40px;
 }
 
 /* INVERTE A COR DO SVG PARA PRETO QUANDO ESTIVER NO MODO BRANCO */
 [data-theme="light"] .back-start-icon__container img {
-    filter: invert();
+  filter: invert();
 }
 
 /* FIM DOBRA BACK-START ICON */
 
 /* INICIO DOBRA SIDE MENU */
 .side-menu__container {
-    height: 100vh;
-    width: 80%;
-    z-index: 500;
+  height: 100vh;
+  width: 80%;
+  z-index: 500;
 
-    background-color: var(--color-1);
-    color: var(--color-2);
+  background-color: var(--color-1);
+  color: var(--color-2);
 
-    position: fixed;
-    right: 0;
-    top: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
 
+.side-menu__bt-close {
+  width: 90%;
+  height: 80px;
+  margin-top: 18px;
+  text-align: end;
+}
+
+.side-menu__bt-close img {
+  height: 100%;
 }
 
 .side-menu__container > ul {
-    color: var(--color-2);
-    margin-left: 40px;
-    margin-top: 60px;
+  color: var(--color-2);
+  margin-left: 40px;
+  margin-top: 60px;
 }
 
 .side-menu__container ul > li {
-    list-style: none;
-    min-height: 40px;
-    padding: 15px;
+  list-style: none;
+  min-height: 40px;
+  padding: 15px;
 }
 
 .side-menu__container ul > li > a {
-    color: var(--color-2);
-    font-size: 20pt;
-    text-decoration: none;
+  color: var(--color-2);
+  font-size: 20pt;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.side-menu__triangle-expand {
+  margin-left: 20px;
+}
+
+.toggle-up {
+  transform: rotate(180deg);
+  transition: transform 0.5s linear;
+}
+
+.toggle-down {
+  transform: rotate(0deg);
+  transition: transform 0.5s linear;
 }
 
 /* SUBMENU */
+
+/* hidden para não vazar o conteúdo quando o elemento 
+desaparecer */
+.side-menu__container ul > li > ul {
+  overflow: hidden;
+  max-height: 800px;
+  transition: max-height 0.5s ease-in-out;
+}
+
+/**
+* classe que esconde o submenu
+* pointer-events proibe o evento de clique
+*/
+.side-menu__container ul > li > ul.hide {
+  max-height: 0;
+  pointer-events: none;
+}
+
 .side-menu__container ul > li > ul > li {
-    list-style: none;
-    height: 8px;
+  list-style: none;
+  height: 8px;
 }
 
 .side-menu__container ul > li > ul > li > a {
-    color: var(--color-2);
-    font-size: 15pt;
-    text-decoration: none;
-    overflow: hidden;
+  color: var(--color-2);
+  font-size: 15pt;
+  text-decoration: none;
+  overflow: hidden;
 }
-
 /* FIM DOBRA SIDE MENU */
+
+
+/* INICIO DOBRA RESPONISVIDADE */
+
+/* FIM DOBRA RESPONISVIDADE */
+
 
 /* INICIO DOBRA APRESENTAÇÃO  */
 
