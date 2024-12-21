@@ -192,6 +192,53 @@ body {
 
 /* FIM DOBRA BACK-START ICON */
 
+/* INICIO DOBRA SIDE MENU */
+.side-menu__container {
+    height: 100vh;
+    width: 80%;
+    z-index: 500;
+
+    background-color: var(--color-1);
+    color: var(--color-2);
+
+    position: fixed;
+    right: 0;
+    top: 0;
+
+}
+
+.side-menu__container > ul {
+    color: var(--color-2);
+    margin-left: 40px;
+    margin-top: 60px;
+}
+
+.side-menu__container ul > li {
+    list-style: none;
+    min-height: 40px;
+    padding: 15px;
+}
+
+.side-menu__container ul > li > a {
+    color: var(--color-2);
+    font-size: 20pt;
+    text-decoration: none;
+}
+
+/* SUBMENU */
+.side-menu__container ul > li > ul > li {
+    list-style: none;
+    height: 8px;
+}
+
+.side-menu__container ul > li > ul > li > a {
+    color: var(--color-2);
+    font-size: 15pt;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+/* FIM DOBRA SIDE MENU */
 
 /* INICIO DOBRA APRESENTAÇÃO  */
 

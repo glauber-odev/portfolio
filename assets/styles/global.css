@@ -1,13 +1,12 @@
-:root{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 14pt;
-    font-weight: 500;
-    color: var(--color-2);
+:root {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14pt;
+  font-weight: 500;
+  color: var(--color-2);
 
-    --color-1: #ffffff;
-    --color-2: #181818;
-    --color-3: #68f327;
-
+  --color-1: #ffffff;
+  --color-2: #181818;
+  --color-3: #68f327;
 }
 
 /**
@@ -15,42 +14,44 @@
 * COM O ATRIBUTO PRÉ SETADO PELO USER
 */
 @media (prefers-reduced-motion: no-preference) {
-    html {
-      scroll-behavior: smooth;
-    }
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
-:target{
-    scroll-margin-top: .8em;
+:target {
+  scroll-margin-top: 0.8em;
 }
 
 /**
 * MUDANÇA DE TEMA
 */
 [data-theme="light"] {
-    --color-1: #ffffff;
-    --color-2: #000000;
+  --color-1: #ffffff;
+  --color-2: #000000;
 }
-  
+
 [data-theme="dark"] {
---color-1: #000000;
---color-2: #ffffff;
+  --color-1: #000000;
+  --color-2: #ffffff;
 }
 
-*{
-    margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
-.flex-row{
-    display: flex;
-    flex-direction: row;
+.flex-row {
+  display: flex;
+  flex-direction: row;
 }
 
-.hidden {
-    opacity: 0;
-  }
+.hidden { opacity: 0; }
+
+.visible {
+    display: none;
+}

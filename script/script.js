@@ -138,13 +138,14 @@ function defineSettingAsThemeString({ localStorageTheme, systemSettingDark }) {
 * START BACK-START BUTTON
 */
 
+/**
+ * this listener show or hide 
+ * arrow to go to the top of the page
+*/
 document.addEventListener("scroll", () => {
   let position = window.scrollY;
   const AFTER_BANNER_POSITION = 600;
   const backStartIcon = document.querySelector(".back-start-icon__container");
-  const buttonIcon = document.querySelector("#svg-test");
-
-  console.log(position);
   
   if(position >= AFTER_BANNER_POSITION){
     backStartIcon.style.visibility = 'visible';
@@ -158,4 +159,36 @@ document.addEventListener("scroll", () => {
 
 /**
 * END BACK-START BUTTON
+*/
+
+
+
+/**
+* START SIDE BAR MENU
+*/
+
+/**
+ * this toggle show or hide submenus
+*/
+
+const sideMenuProjetos = document.querySelector('.side-menu__projetos-list');
+const sideMenuContatos = document.querySelector('.side-menu__contato-list');
+
+sideMenuProjetos.addEventListener("click" , () => {
+  sideBarShowSubmenu(sideMenuProjetos);
+})
+
+sideMenuContatos.addEventListener("click" , () => {
+  sideBarShowSubmenu(sideMenuContatos);
+})
+
+function sideBarShowSubmenu(elemento){
+
+  //take ul child element
+  elemento.children[2].classList.toggle("visible")
+  console.log(elemento.children[2])
+}
+
+/**
+* END SIDE BAR MENU
 */
