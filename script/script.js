@@ -1,4 +1,51 @@
 /**
+ * BEGIN HIDE ELEMENT BEHIND CONTATO
+ */
+
+/**
+ * getting items from document
+ */
+  const contactMeLink = document.querySelector('.nav-menu__itens__contact-me-link');
+  const arrayNavItens = document.querySelector('.nav-menu__itens').getElementsByTagName('li');
+
+
+/**
+ * Utility function to hide itens
+ * Behind contato button
+ */
+  contactMeLink.addEventListener('mouseenter', () => {
+    contactMeLink.style.zIndex = "10";
+    arrayNavItens[0].style.transform = "translateX(320px)";
+    arrayNavItens[0].style.transition = "all .5s";
+    arrayNavItens[1].style.transform = "translateX(240px)";
+    arrayNavItens[1].style.transition = "all .5s";
+    arrayNavItens[5].style.transform = "translateX(115px)";
+    arrayNavItens[5].style.transition = "all .5s";
+    arrayNavItens[5].style.fontSize = "17px";
+    contactMeLink.style.transform = "scale(1.09)";
+  })
+
+  /**
+ * Utility function to back itens
+ * To yout default position in html
+ */
+  contactMeLink.addEventListener('mouseleave', () => {
+    arrayNavItens[0].style.transform = "translateX(0px)";
+    arrayNavItens[0].style.transition = "all .5s";
+    arrayNavItens[1].style.transform = "translateX(0px)";
+    arrayNavItens[1].style.transition = "all .5s";
+    arrayNavItens[5].style.transform = "translateX(0px)";
+    arrayNavItens[5].style.transition = "all .5s";
+    arrayNavItens[5].style.fontSize = "14pt";
+    contactMeLink.style.transform = "scale(1)";
+  })
+
+/**
+ * END HIDE ELEMENT BEHIND CONTATO
+ */
+
+
+/**
  * BEGIN THEME CHANGER SCRIPT
  */
 

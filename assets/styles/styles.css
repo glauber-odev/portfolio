@@ -97,9 +97,9 @@ body {
 
 .nav-menu__itens > li:hover ul {
   /*--- DROP-DOWN-MENU PROPERTIES ---*/
-  /* display: block; */
   visibility: visible;
   height: 200px;
+  margin-top: 10px;
 }
 
 .nav-menu__itens__line {
@@ -148,6 +148,7 @@ body {
   padding-right: 12px;
   padding-top: 4px;
   padding-bottom: 7px;
+  background-color: var(--color-1);
 }
 
 .nav-menu__toggle-layout_mode {
