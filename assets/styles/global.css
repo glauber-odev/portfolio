@@ -10,6 +10,23 @@
 
 }
 
+/**
+* DEIXA O SCROLL MAIS SUAVE E DE ACORDO
+* COM O ATRIBUTO PRÉ SETADO PELO USER
+*/
+@media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+}
+
+:target{
+    scroll-margin-top: .8em;
+}
+
+/**
+* MUDANÇA DE TEMA
+*/
 [data-theme="light"] {
     --color-1: #ffffff;
     --color-2: #000000;

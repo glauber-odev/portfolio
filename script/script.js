@@ -72,7 +72,7 @@ function defineSettingAsThemeString({ localStorageTheme, systemSettingDark }) {
   */
   function updateButton({ buttonEl, isDark }) {
     const newCta = isDark ? "Change to light theme" : "Change to dark theme";
-    const iconChoose = isDark ? "assets/images/sun.svg" : "assets/images/moon.svg";
+    const iconChoose = isDark ? "assets/images/icons/sun.svg" : "assets/images/icons/moon.svg";
 
     buttonEl.setAttribute("aria-label", newCta);
     buttonEl.classList.add("hidden");
@@ -131,3 +131,31 @@ function defineSettingAsThemeString({ localStorageTheme, systemSettingDark }) {
   /**
  * END THEME CHANGER SCRIPT
  */
+
+
+
+/**
+* START BACK-START BUTTON
+*/
+
+document.addEventListener("scroll", () => {
+  let position = window.scrollY;
+  const AFTER_BANNER_POSITION = 600;
+  const backStartIcon = document.querySelector(".back-start-icon__container");
+  const buttonIcon = document.querySelector("#svg-test");
+
+  console.log(position);
+  
+  if(position >= AFTER_BANNER_POSITION){
+    backStartIcon.style.visibility = 'visible';
+    backStartIcon.style.opacity = "1";
+  } else {
+    backStartIcon.style.visibility = 'hidden';
+    backStartIcon.style.opacity = "0";
+  }
+
+})
+
+/**
+* END BACK-START BUTTON
+*/

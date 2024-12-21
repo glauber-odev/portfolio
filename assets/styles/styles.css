@@ -165,11 +165,31 @@ body {
 
 
 /* INICIO DOBRA BACK-START ICON */
-.back-start-icon {
+.back-start-icon__container {
+    background-color: var(--color-1);
+    border-radius: 50%;
+    border: 3px solid var(--color-2);
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
   position: fixed;
-  right: 10;
-  bottom: 10;
+    right: 60px;
+    bottom: 60px;
+
+    transition: .2s ease-in-out;
 }
+
+.back-start-icon__container img {
+    width: 40px;
+}
+
+/* INVERTE A COR DO SVG PARA PRETO QUANDO ESTIVER NO MODO BRANCO */
+[data-theme="light"] .back-start-icon__container img {
+    filter: invert();
+}
+
 /* FIM DOBRA BACK-START ICON */
 
 
