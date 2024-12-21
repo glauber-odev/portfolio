@@ -66,4 +66,14 @@
     opacity: 0.6;
     position: fixed;
     display: none;
+    transition: all .5s ease-in-out;
+}
+
+/* RESPOSIVIDADE */
+@media (max-width: 450px){
+
+  :root{
+      font-size: 17pt;
+  }
+
 }

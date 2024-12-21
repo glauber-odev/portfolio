@@ -52,6 +52,7 @@ body {
   padding: 8px;
   background-color: #ffffff;
   border-radius: 50%;
+  transition: all 0.4s ease-in-out;
 }
 
 .nav-menu__logo-wrapper__second-logo {
@@ -185,11 +186,12 @@ body {
 }
 
 /* INVERTE A COR DO SVG PARA PRETO QUANDO ESTIVER NO MODO BRANCO */
-[data-theme="light"] .back-start-icon__container img {
+[data-theme="light"] .back-start-icon__container img  {
   filter: invert();
 }
 
 /* FIM DOBRA BACK-START ICON */
+
 
 /* INICIO DOBRA SIDE MENU */
 .side-menu__container {
@@ -203,6 +205,8 @@ body {
   position: fixed;
   right: 0;
   top: 0;
+  transform: translateX(100%);
+  transition: all .5s ease-in-out;
 }
 
 .side-menu__bt-close {
@@ -279,13 +283,68 @@ desaparecer */
   text-decoration: none;
   overflow: hidden;
 }
+
+.nav-menu__open-side-bar {
+    display: none;
+}
 /* FIM DOBRA SIDE MENU */
 
 
-/* INICIO DOBRA RESPONISVIDADE */
+/* INICIO DOBRA RESPONSIVIDADE */
 
-/* FIM DOBRA RESPONISVIDADE */
 
+
+/* FIM DOBRA RESPONSIVIDADE */
+@media (max-width : 450px){
+
+    .nav-menu__logo-wrapper{
+        margin-top: 4px;
+        margin-left: 11px;
+    }
+
+    .nav-menu__logo-wrapper__first-logo {
+        width: 50px;
+        height: 50px;
+        padding: 6px;
+    }
+
+    [data-theme="light"] .nav-menu__logo-wrapper__first-logo {
+        border: 1px solid var(--color-3);
+    }
+
+    .nav-menu__logo-wrapper__second-logo {
+        margin-left: 5px;
+        width: 140px;
+        height: 30px;
+    }
+
+    .nav-menu__itens>li {
+        display: none;
+    }
+
+    .nav-menu__toggle-layout_mode{
+        margin-left: 72px;
+    }
+
+    .nav-menu__open-side-bar {
+        background-color: transparent;
+        margin-right: 25px;
+        cursor: pointer;
+        display: block;
+    }
+
+    [data-theme="light"] .nav-menu__open-side-bar img, [data-theme="light"] .side-menu__contato-list img, [data-theme="light"] .side-menu__projetos-list img {
+        filter: invert();
+        transition: all 0.4s ease-in-out;
+        cursor: pointer;
+    }
+
+    /* icons invert color ex.: black to white */
+    [data-theme="light"] .side-menu__bt-close img {
+        filter: invert()
+    }
+
+}
 
 /* INICIO DOBRA APRESENTAÇÃO  */
 

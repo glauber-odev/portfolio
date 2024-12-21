@@ -178,9 +178,18 @@ document.addEventListener("scroll", () => {
 
 const btCloseSMenu = document.querySelector(".side-menu__bt-close");
 const sideMenuContainer = document.querySelector(".side-menu__container");
+const btOpenSMenu = document.querySelector(".nav-menu__open-side-bar");
+const pageinBg = document.querySelector(".page-in-bg");
+
+btOpenSMenu.addEventListener("click", () => {
+  sideMenuContainer.style.transform = "translateX(0%)";
+  pageinBg.style.display = "block";
+
+});
 
 btCloseSMenu.addEventListener("click", () => {
   sideMenuContainer.style.transform = "translateX(100%)";
+  pageinBg.style.display = "none";
 });
 
 /**
