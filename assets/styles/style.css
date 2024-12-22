@@ -1,36 +1,114 @@
 .modalMessage {
-    --largura-da-div: 150px;
-    height: 50px;
-    width: var(--largura-da-div);
-    border-radius: 50px;
-    background-color: var(--color-1);
-    border: 2px solid var(--color-2);
-    color: var(--color-2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 600;
-    position: fixed;
-    bottom: 35px;
-    /**
+  --largura-da-div: 150px;
+  height: 50px;
+  width: var(--largura-da-div);
+  border-radius: 50px;
+  background-color: var(--color-1);
+  border: 2px solid var(--color-2);
+  color: var(--color-2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 600;
+  position: fixed;
+  bottom: 35px;
+  /**
     * Centraliza a div com position fixed
     * Pega metade do tamanho da tela menos metade
     * Do tamanho do elemento a ser adicionado.
      */
-    left: calc(50% - (var(--largura-da-div)/2) );
-    transform: translateY(300%);
-    visibility: hidden;
-    transition: all .5s ease-in-out;
-
+  left: calc(50% - (var(--largura-da-div) / 2));
+  transform: translateY(300%);
+  visibility: hidden;
+  transition: all 0.5s ease-in-out;
 }
 
+/* INICIO DOBRA IMAGEM DE APRESENTAÇÃO */
 
-    /* RESPONSIVIDADE */
-@media (max-width: 450px){
+.banner__container {
+  margin-top: 50px;
+  height: 700px;
+  width: 100%;
 
-    .modalMessage {
-        font-size: 14pt;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-    }
+  /* imagens interessantes para colocar */
+  /* 1 pintura abastrata 'https://images.unsplash.com/photo-1729575846509-0ed233b0c2b0?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' */
+  /* 2 atomo verde https://static.vecteezy.com/system/resources/previews/017/756/375/non_2x/space-background-green-turquoise-cute-flat-style-template-with-stars-in-outer-space-free-vector.jpg */
+  /* 3 fundo verde azul claro linhas 'https://img.freepik.com/vetores-gratis/design-abstrato-da-pagina-de-destino-modelo-para-site-ou-aplicativo-onda-minima-abstrata-colorida_1217-4727.jpg?t=st=1734880453~exp=1734884053~hmac=a6e187ae5f2e2e2bd5b213bb7857e08d0597b4073995fd3a7094032d71e70494&w=900' */
+  background-image: url("../images/backgroun-banner.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
+.banner__content-wrapper {
+  margin-top: 190px;
+  margin-left: calc(5%);
+  width: 540px;
+}
+
+.banner__content-wrapper__title {
+  font-size: 50pt;
+  font-weight: 700;
+  color: #181818;
+  overflow: auto;
+}
+
+.banner__content-wrapper__sub-title {
+  font-size: 25pt;
+  height: auto;
+  font-weight: 70;
+  color: #181818;
+  overflow: auto;
+}
+
+.banner__content-wrapper__content {
+  color: #181818;
+  font-size: 13pt;
+  font-weight: 400;
+  text-align: justify;
+}
+
+.banner__content-wrapper__know-more {
+  display: block;
+  margin-top: 30px;
+  width: 175px;
+  height: 45px;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.banner__content-wrapper__know-more > p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: #181818;
+  font-size: 14pt;
+  font-weight: 500;
+  border: 2px solid #181818;
+  border-radius: 45px;
+}
+
+.banner__div-transition {
+  width: 100%;
+  height: 70px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(0deg, var(--color-1) 0%, rgba(0, 0, 0, 0) 100%);
+  transition: all 0.6s ease-in-out;
+}
+/* FIM DOBRA IMAGEM DE APRESENTAÇÃO */
+
+/* RESPONSIVIDADE */
+@media (max-width: 450px) {
+  .modalMessage {
+    font-size: 14pt;
+  }
+
+  /* INICIO DOBRA IMAGEM DE APRESENTAÇÃO */
+  /* FIM DOBRA IMAGEM DE APRESENTAÇÃO */
 }

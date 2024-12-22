@@ -193,6 +193,7 @@ body {
   position: fixed;
   right: 60px;
   bottom: 60px;
+  visibility: hidden;
 
   transition: 0.2s ease-in-out;
 }
@@ -388,11 +389,3 @@ desaparecer */
     }
 
 }
-
-/* INICIO DOBRA APRESENTAÇÃO  */
-
-.banner__container {
-  margin-top: 80px;
-}
-
-/* FIM DOBRA APRESENTAÇÃO */

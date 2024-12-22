@@ -264,11 +264,11 @@ function sideBarShowSubmenu(elemento) {
 
   // toggle hide class and icon rotation
   if (ulChild.className == "hide") {
-    ulChild.className = "";
-    imgChild.className = "side-menu__triangle-expand toggle-up";
-  } else {
-    ulChild.className = "hide";
-    imgChild.className = "side-menu__triangle-expand toggle-down";
+      ulChild.className = "";
+      imgChild.className = "side-menu__triangle-expand toggle-up";
+    } else {
+      ulChild.className = "hide";
+      imgChild.className = "side-menu__triangle-expand toggle-down";
   }
 }
 
