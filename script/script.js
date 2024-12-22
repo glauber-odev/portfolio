@@ -12,6 +12,8 @@ const arrayNavItens = document
   .querySelector(".nav-menu__itens")
   .getElementsByTagName("li");
 
+const transitionValue = "all .5s";
+
 /**
  * Utility function to hide itens
  * Behind contato button
@@ -19,12 +21,12 @@ const arrayNavItens = document
 contactMeLink.addEventListener("mouseenter", () => {
   contactMeLink.style.zIndex = "10";
   arrayNavItens[0].style.transform = "translateX(320px)";
-  arrayNavItens[0].style.transition = "all .5s";
-  arrayNavItens[1].style.transform = "translateX(240px)";
-  arrayNavItens[1].style.transition = "all .5s";
-  arrayNavItens[5].style.transform = "translateX(115px)";
-  arrayNavItens[5].style.transition = "all .5s";
-  arrayNavItens[5].style.fontSize = "17px";
+  arrayNavItens[0].style.transition = transitionValue;
+  arrayNavItens[2].style.transform = "translateX(240px)";
+  arrayNavItens[2].style.transition = transitionValue;
+  arrayNavItens[6].style.transform = "translateX(115px)";
+  arrayNavItens[6].style.transition = transitionValue;
+  arrayNavItens[6].style.fontSize = "17px";
   contactMeLink.style.transform = "scale(1.09)";
 });
 
@@ -34,12 +36,12 @@ contactMeLink.addEventListener("mouseenter", () => {
  */
 contactMeLink.addEventListener("mouseleave", () => {
   arrayNavItens[0].style.transform = "translateX(0px)";
-  arrayNavItens[0].style.transition = "all .5s";
-  arrayNavItens[1].style.transform = "translateX(0px)";
-  arrayNavItens[1].style.transition = "all .5s";
-  arrayNavItens[5].style.transform = "translateX(0px)";
-  arrayNavItens[5].style.transition = "all .5s";
-  arrayNavItens[5].style.fontSize = "14pt";
+  arrayNavItens[0].style.transition = transitionValue;
+  arrayNavItens[2].style.transform = "translateX(0px)";
+  arrayNavItens[2].style.transition = transitionValue;
+  arrayNavItens[6].style.transform = "translateX(0px)";
+  arrayNavItens[6].style.transition = transitionValue;
+  arrayNavItens[6].style.fontSize = "14pt";
   contactMeLink.style.transform = "scale(1)";
 });
 
