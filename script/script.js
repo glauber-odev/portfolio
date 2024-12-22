@@ -24,9 +24,9 @@ contactMeLink.addEventListener("mouseenter", () => {
   arrayNavItens[0].style.transition = transitionValue;
   arrayNavItens[2].style.transform = "translateX(240px)";
   arrayNavItens[2].style.transition = transitionValue;
-  arrayNavItens[6].style.transform = "translateX(115px)";
-  arrayNavItens[6].style.transition = transitionValue;
-  arrayNavItens[6].style.fontSize = "17px";
+  arrayNavItens[7].style.transform = "translateX(115px)";
+  arrayNavItens[7].style.transition = transitionValue;
+  arrayNavItens[7].style.fontSize = "17px";
   contactMeLink.style.transform = "scale(1.09)";
 });
 
@@ -39,9 +39,9 @@ contactMeLink.addEventListener("mouseleave", () => {
   arrayNavItens[0].style.transition = transitionValue;
   arrayNavItens[2].style.transform = "translateX(0px)";
   arrayNavItens[2].style.transition = transitionValue;
-  arrayNavItens[6].style.transform = "translateX(0px)";
-  arrayNavItens[6].style.transition = transitionValue;
-  arrayNavItens[6].style.fontSize = "14pt";
+  arrayNavItens[7].style.transform = "translateX(0px)";
+  arrayNavItens[7].style.transition = transitionValue;
+  arrayNavItens[7].style.fontSize = "14pt";
   contactMeLink.style.transform = "scale(1)";
 });
 
@@ -49,6 +49,57 @@ contactMeLink.addEventListener("mouseleave", () => {
  * END HIDE ELEMENT BEHIND CONTATO
  */
 
+/**
+ * START COPY MAIL ADRESS
+ */
+/**
+ * Utility function to copy to clipboard the email address
+ * & show a message;
+ */
+function copyMailAdress() {
+
+  const content = "glauber.vieira.ofi@gmail.com";
+  const copiedMessage = "Email copiado!"
+
+  const unsecuredCopyToClipboard = (text) => {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.select();
+    try {
+      document.execCommand("copy");
+    } catch (err) {
+      console.error("Unable to copy to clipboard", err);
+    }
+    document.body.removeChild(textArea);
+  };
+
+  /**
+   * Try to copy using security function.
+   * If this is not HTTPS, use older unsecurity method
+   */
+  if (window.isSecureContext && navigator.clipboard) {
+    navigator.clipboard.writeText(content);
+  } else {
+    unsecuredCopyToClipboard(content);
+  }
+
+  showMessage();
+}
+/**
+ * START COPY MAIL ADRESS
+ */
+
+function showMessage(){
+  const modalElement = document.querySelector(".modalMessage");
+
+  modalElement.style.transform = "translateY(0%)"
+  modalElement.style.visibility = "visible";
+
+  setTimeout(()=>{
+    modalElement.style.transform = "translateY(300%)"
+  },3000);
+}
 
 /**
  * BEGIN THEME CHANGER SCRIPT
@@ -142,7 +193,6 @@ buttonToggleTheme.addEventListener("click", (event) => {
  * END THEME CHANGER SCRIPT
  */
 
-
 /**
  * START BACK-START BUTTON
  */
@@ -169,7 +219,6 @@ document.addEventListener("scroll", () => {
  * END BACK-START BUTTON
  */
 
-
 /**
  * START SIDE BAR MENU
  */
@@ -186,7 +235,6 @@ const pageinBg = document.querySelector(".page-in-bg");
 btOpenSMenu.addEventListener("click", () => {
   sideMenuContainer.style.transform = "translateX(0%)";
   pageinBg.style.display = "block";
-
 });
 
 btCloseSMenu.addEventListener("click", () => {

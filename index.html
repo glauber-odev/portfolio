@@ -33,7 +33,7 @@
                       Sobre
                       <hr class="nav-menu__itens__line" />
                       <ul>
-                        <li><a href="">Github</a></li>
+                        <li><a href="https://github.com/glauber-odev" target="_blank">Github</a></li>
                       </ul>  
                   </a>
               </li>
@@ -42,9 +42,10 @@
                       Projetos
                       <hr class="nav-menu__itens__line" />
                       <ul>
-                          <li><a href="">Projeto 1</a></li>
-                          <li><a href="">Projeto 2</a></li>
-                          <li><a href="">Projeto 3</a></li>
+                          <li><a href="https://olimpo-training.ct.ws/" target="_blank">Olimpo Training</a></li>
+                          <li><a href="https://buzzfeed-angular-glauber.vercel.app/" target="_blank">Buzzfeed</a></li>
+                          <li><a href="https://landing-page-the-last-of-us.vercel.app/" target="_blank">The last of us</a></li>
+                          <li><a href="https://playstation-store-glauber.vercel.app/" target="_blank">Playstation store</a></li>
                       </ul>
                   </a>
               </li>
@@ -60,8 +61,16 @@
                       <hr class="nav-menu__itens__line" />
                   </a>
                   <ul>
-                    <li><a href="">Linkedin</a></li>
-                    <li><a href="">Email</a></li>
+                    <li><a href="https://www.linkedin.com/in/glauber-vieira" target="_blank">Linkedin</a></li>
+                    <li onclick="copyMailAdress()">
+                        <a>Email</a>
+                        <img
+                        src="assets/images/icons/content-copy.svg"
+                        alt="icone de copiar"
+                        class="copyIcon"
+                        title="copiar email"
+                        >
+                    </li>
                 </ul>
               </li>        
               <!-- TEHEME TOGGLE -->
@@ -106,15 +115,10 @@
                 class="side-menu__triangle-expand"
                 >
                 <ul class="hide">
-                    <li>
-                        <a href="">Projeto 1</a>
-                    </li>
-                    <li>
-                        <a href="">Projeto 2</a>
-                    </li>
-                    <li>
-                        <a href="">Projeto 3</a>
-                    </li>
+                    <li><a href="https://olimpo-training.ct.ws/" target="_blank">Olimpo Training</a></li>
+                    <li><a href="https://buzzfeed-angular-glauber.vercel.app/" target="_blank">Buzzfeed</a></li>
+                    <li><a href="https://landing-page-the-last-of-us.vercel.app/" target="_blank">The last of us</a></li>
+                    <li><a href="https://playstation-store-glauber.vercel.app/" target="_blank">Playstation store</a></li>
                 </ul>
             </li>
             <li>
@@ -131,8 +135,14 @@
                     <li>
                         <a href="">Linkedin</a>
                     </li>
-                    <li>
-                        <a href="">Email</a>
+                    <li onclick="copyMailAdress()" >
+                        <a target="_blank">Email</a>
+                        <img
+                        src="assets/images/icons/content-copy.svg"
+                        alt="icone de copiar"
+                        class="copyIcon"
+                        title="copiar email"
+                        >
                     </li>
                 </ul>
             </li>
@@ -156,6 +166,12 @@
 
 
     <!-- INICIO DOBRA IMAGEM DE APRESENTAÇÃO -->
+
+     <!-- modal message aparece apenas quando copiado o emaill -->
+     <div class="modalMessage">
+        Email copiado!
+     </div>
+
      <section class="banner__container">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus error praesentium officiis quisquam? Consequatur ut nemo suscipit, rerum sint, saepe id corrupti non totam tenetur assumenda. Incidunt minima iure quibusdam.
         Dolor aperiam optio maiores autem libero voluptatum voluptates hic! Reiciendis, eaque a! Corporis expedita sapiente dignissimos cum ipsam quos animi non nulla? Natus obcaecati quidem, cum laborum veniam eius fugit?

@@ -144,6 +144,16 @@ body {
   color: var(--color-2);
 }
 
+.nav-menu__itens ul > li > .copyIcon {
+  height: 18px;
+  margin-left: 5px;
+  opacity: .5;
+}
+
+.nav-menu__itens ul > li > .copyIcon:hover {
+  opacity: 1;
+}
+
 .nav-menu__itens ul > li:hover {
   opacity: 1;
 }
@@ -192,7 +202,8 @@ body {
 }
 
 /* INVERTE A COR DO SVG PARA PRETO QUANDO ESTIVER NO MODO BRANCO */
-[data-theme="light"] .back-start-icon__container img  {
+[data-theme="light"] .back-start-icon__container img,
+[data-theme="light"] .copyIcon {
   filter: invert();
 }
 
@@ -297,6 +308,11 @@ desaparecer */
   height: 8px;
 }
 
+.side-menu__container ul > li > ul > li .copyIcon {
+  height: 18px;
+  margin-left: 5px;
+}
+
 .side-menu__container ul > li > ul > li > a {
     color: var(--color-2);
     font-size: 15pt;
@@ -358,7 +374,9 @@ desaparecer */
         display: block;
     }
 
-    [data-theme="light"] .nav-menu__open-side-bar img, [data-theme="light"] .side-menu__contato-list img, [data-theme="light"] .side-menu__projetos-list img {
+    [data-theme="light"] .nav-menu__open-side-bar img,
+    [data-theme="light"] .side-menu__contato-list img,
+    [data-theme="light"] .side-menu__projetos-list img {
         filter: invert();
         transition: all 0.4s ease-in-out;
         cursor: pointer;
