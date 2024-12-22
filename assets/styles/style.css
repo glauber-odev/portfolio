@@ -156,5 +156,93 @@
     font-size: 16pt;
   }
 
-  /* FIM DOBRA IMAGEM DE APRESENTAÇÃO */
 }
+  /* FIM DOBRA IMAGEM DE APRESENTAÇÃO */
+
+
+/* INICIO DOBRA WHO AM I */
+.whomi__container {
+    height: 800px;
+}
+
+.whomi__ilustration {
+    height: 500px;
+    width: 450px;
+    border: 1px solid var(--color-2);
+    margin-right: 50px;
+}
+
+.whomi__ilustration img {
+    width: 100%;
+    height: 100%;
+    transition: all .5s ease-in-out;
+}
+
+.whomi__ilustration img:hover {
+    transform: scale(1.03); 
+}
+
+.whomi__content {
+    height: 600px;
+    width: 450px;
+    overflow: auto;
+}
+
+.whomi__content > h1 {
+    color: var(--color-3);
+    font-size: 30pt;
+    font-weight: 700;
+    transition: all .2s;
+    cursor: default;
+}
+
+.whomi__content > h1:hover {
+    color: var(--color-2);
+}
+
+.whomi__content > h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 12pt;
+}
+
+.whomi__content > p {
+    font-size: 10pt;
+    color: var(--color-5);
+}
+
+.whoami__links {
+    display: flex;
+    justify-content: space-around;
+}
+
+.whoami__links a {
+    text-decoration: none;
+    height: 60px;
+    width: 170px;
+    margin: 15px;
+    color: var(--color-2);
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: .9;
+    transition: all .2s;
+}
+
+.whoami__links a:hover {
+    opacity: 1;
+    transition: all .2s;
+}
+
+.whoami__links__github {
+    background-color: var(--color-3);
+}
+
+.whoami__links__cv {
+    border: 1px solid var(--color-2);
+}
+
+/* FIM DOBRA WHO AM I */

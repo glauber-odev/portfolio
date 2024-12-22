@@ -7,6 +7,8 @@
   --color-1: #ffffff;
   --color-2: #181818;
   --color-3: #68f327;
+  --color-4: #81e9ec;
+  --color-5: #8a8a8a;
 }
 
 /* INICIO DOBRA SCROLL BAR */
@@ -74,6 +76,13 @@
   font: inherit;
   vertical-align: baseline;
 }
+
+.centralize {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 .flex-row {
   display: flex;
