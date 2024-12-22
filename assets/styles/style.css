@@ -29,6 +29,7 @@
   margin-top: 50px;
   height: 700px;
   width: 100%;
+  overflow: hidden;
 
   display: flex;
   flex-direction: column;
@@ -55,6 +56,8 @@
   font-weight: 700;
   color: #181818;
   overflow: auto;
+  opacity: .8;
+  cursor: default;
 }
 
 .banner__content-wrapper__sub-title {
@@ -63,6 +66,8 @@
   font-weight: 70;
   color: #181818;
   overflow: auto;
+  opacity: .8;
+  cursor: default;
 }
 
 .banner__content-wrapper__content {
@@ -70,6 +75,8 @@
   font-size: 13pt;
   font-weight: 400;
   text-align: justify;
+  opacity: .8;
+  cursor: default;
 }
 
 .banner__content-wrapper__know-more {
@@ -79,6 +86,7 @@
   height: 45px;
   text-decoration: none;
   font-weight: 400;
+  opacity: .8;
 }
 
 .banner__content-wrapper__know-more > p {
@@ -92,7 +100,22 @@
   font-weight: 500;
   border: 2px solid #181818;
   border-radius: 45px;
+  opacity: .8;
+  transition: all .4s ease-in-out;
 }
+
+.banner__content-wrapper__know-more > p:hover {
+    transform: scale(1.03);
+    transition: all .4s ease-in-out;
+}
+
+.banner__content-wrapper__title:hover,
+.banner__content-wrapper__sub-title:hover,
+.banner__content-wrapper__content:hover,
+.banner__content-wrapper__know-more > p:hover,
+.banner__content-wrapper__know-more > p:hover {
+    opacity: 1;
+ }
 
 .banner__div-transition {
   width: 100%;
@@ -110,5 +133,28 @@
   }
 
   /* INICIO DOBRA IMAGEM DE APRESENTAÇÃO */
+  .banner__container {
+    height: 900px;
+  }
+
+  .banner__content-wrapper {
+    margin-top: 210px;
+    width: 340px;
+    height: 400px;
+  }
+
+  .banner__content-wrapper__title {
+    font-size: 30pt;
+  }
+
+  .banner__content-wrapper__sub-title {
+    font-size: 22pt;
+  }
+
+  .banner__content-wrapper__content {
+    overflow: visible;
+    font-size: 16pt;
+  }
+
   /* FIM DOBRA IMAGEM DE APRESENTAÇÃO */
 }
