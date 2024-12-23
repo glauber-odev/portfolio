@@ -245,4 +245,23 @@
     border: 1px solid var(--color-2);
 }
 
+
+ /* RESPONSIVIDADE */
+ @media (max-width: 450px){
+    .whomi__ilustration{
+        display: none;
+    }
+
+    .whomi__content{
+        width: 355px;
+        height: 700px;
+    }
+
+    .whoami__links a {
+        height: 50px;
+        width: 140px;
+        font-size: 15pt;
+    }
+ }
+
 /* FIM DOBRA WHO AM I */

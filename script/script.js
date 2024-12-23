@@ -275,3 +275,35 @@ function sideBarShowSubmenu(elemento) {
 /**
  * END SIDE BAR MENU
  */
+
+
+/**
+ * START CHANGE CV DOWNLOAD LINK
+ */
+
+/**
+ * Utility function to change href atributo
+ * From the downaload CV button using a google drive
+ * download link. It shows how to build the url
+ */
+
+//  1. Take file share url from drive
+//  2. Format this whit the download pattern
+//  base url: https://drive.google.com/uc
+//  parameters: export=download&id=ID_FROM_YOUR_SHARED_URL
+// link example: https://drive.google.com/uc?export=download&id=1Q5R0WIPMyTEFx59Mp3bIVKfI_rQpbl5_
+
+  function defineUrlDriveDownload(CV_ELEMENT){
+    const DRIVE_DOWNLOAD_BASE_URL = 'https://drive.google.com/uc?export=download&';
+    const DRIVE_FILE_ID = '1Q5R0WIPMyTEFx59Mp3bIVKfI_rQpbl5_';
+  
+    const DRIVE_DONWLOAD_URL = DRIVE_DOWNLOAD_BASE_URL+'id='+DRIVE_FILE_ID;
+    console.log(DRIVE_DONWLOAD_URL);
+    CV_ELEMENT.href = DRIVE_DONWLOAD_URL;
+  }
+
+  const linkCv = document.querySelector('.whoami__links__cv');
+  defineUrlDriveDownload(linkCv);
+/**
+ * START CHANGE CV DOWNLOAD LINK
+ */
