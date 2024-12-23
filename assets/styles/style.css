@@ -168,7 +168,6 @@
 .whomi__ilustration {
     height: 500px;
     width: 450px;
-    border: 1px solid var(--color-2);
     margin-right: 50px;
 }
 
@@ -265,3 +264,19 @@
  }
 
 /* FIM DOBRA WHO AM I */
+
+
+/* INICIO DOBRA CARROSSEL */
+.carousel__container {
+    height: 800px;
+}
+
+/* FIM DOBRA CARROSSEL */
+
+
+/* INICIO DOBRA SKILLS */
+.skills__container {
+    height: 800px;
+    background-color: var(--color-2);
+}
+/* FIM DOBRA SKILLS */
