@@ -307,3 +307,31 @@ function sideBarShowSubmenu(elemento) {
 /**
  * START CHANGE CV DOWNLOAD LINK
  */
+
+
+/**
+ * START CAROUSEL
+ */
+
+  let counterCarousel = 1;
+  const firstRadioCarousel = document.getElementById("radio1");
+  firstRadioCarousel.checked = true;
+
+  // setInterval(() => {
+  //   go2NextImgCarousel();
+  // },5000);
+
+  // back to the first image
+  function go2NextImgCarousel(){
+    counterCarousel++;
+    if(counterCarousel > 4){
+      counterCarousel = 1;
+    }
+
+    document.getElementById("radio"+counterCarousel).checked = true;
+
+  }
+
+/**
+ * END CAROUSEL
+ */
