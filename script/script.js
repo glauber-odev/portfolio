@@ -317,9 +317,9 @@ function sideBarShowSubmenu(elemento) {
   const firstRadioCarousel = document.getElementById("radio1");
   firstRadioCarousel.checked = true;
 
-  // setInterval(() => {
-  //   go2NextImgCarousel();
-  // },5000);
+  setInterval(() => {
+    go2NextImgCarousel();
+  },5000);
 
   // back to the first image
   function go2NextImgCarousel(){
