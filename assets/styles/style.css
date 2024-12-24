@@ -267,103 +267,103 @@
   height: 800px;
 }
 
+.slider {
+    /* centraliza o conteúdo */
+    margin: 0 auto;
+    width: 800px;
+    height: 400px;
+    overflow: hidden;
+  }
+  
+  .slides {
+    width: 400%;
+    height: 400px;
+    display: flex;
+  }
+  
+  .slide {
+    /* 25% referente a 1/4 de 4 partes */
+    width: 25%;
+    position: relative;
+    transition: 2s;
+  }
+  
+  .slide img {
+    width: 100%;
+  }
+  
+  .slides .navigation {
+    /* se posiciona relacionado ao pai */
+    position: absolute;
+    width: 800px;
+    margin-top: 360px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .slides .navigation input {
+    /* reseta o input type radio */
+    all: unset;
+    border: 2px solid var(--color-3);
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.8s;
+  }
+  
+  .manual-btn:not(:last-child) {
+    margin-right: 40px;
+  }
+  
+  .slides .navigation input:hover {
+    background-color: var(--color-3);
+  }
+  
+  /**
+  * Inicio da parte lógica 
+  * quando o #radio1 está em checked, sobe hierarquia para o slides e
+  * seleciona seu filho first e o movimenta para a esquerda
+  * cada movimento apresenta uma imagem
+  * o operador has:() pega o elemento pai
+  */
+  .slides:has(#radio1:checked) .first {
+    margin-left: 0;
+  }
+  
+  .slides:has(#radio2:checked) .first {
+    margin-left: -25%;
+  }
+  
+  .slides:has(#radio3:checked) .first {
+    margin-left: -50%;
+  }
+  
+  .slides:has(#radio4:checked) .first {
+    margin-left: -75%;
+  }
+  
+  /* efeito após clicado */
+  #radio1:checked {
+    background-color: var(--color-3);
+  }
+  
+  #radio2:checked {
+    background-color: var(--color-3);
+  }
+  
+  #radio3:checked {
+    background-color: var(--color-3);
+  }
+  #radio4:checked {
+    background-color: var(--color-3);
+  }
+  
 /* FIM DOBRA CARROSSEL */
 
 /* INICIO DOBRA SKILLS */
 .skills__container {
   height: 800px;
   background-color: var(--color-2);
-}
-
-.slider {
-  /* centraliza o conteúdo */
-  margin: 0 auto;
-  width: 800px;
-  height: 400px;
-  overflow: hidden;
-}
-
-.slides {
-  width: 400%;
-  height: 400px;
-  display: flex;
-}
-
-.slide {
-  /* 25% referente a 1/4 de 4 partes */
-  width: 25%;
-  position: relative;
-  transition: 2s;
-}
-
-.slide img {
-  width: 100%;
-}
-
-.slides .navigation {
-  /* se posiciona relacionado ao pai */
-  position: absolute;
-  width: 800px;
-  margin-top: 360px;
-  display: flex;
-  justify-content: center;
-}
-
-.slides .navigation input {
-  /* reseta o input type radio */
-  all: unset;
-  border: 2px solid var(--color-3);
-  padding: 5px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.8s;
-}
-
-.manual-btn:not(:last-child) {
-  margin-right: 40px;
-}
-
-.slides .navigation input:hover {
-  background-color: var(--color-3);
-}
-
-/**
-* Inicio da parte lógica 
-* quando o #radio1 está em checked, sobe hierarquia para o slides e
-* seleciona seu filho first e o movimenta para a esquerda
-* cada movimento apresenta uma imagem
-* o operador has:() pega o elemento pai
-*/
-.slides:has(#radio1:checked) .first {
-  margin-left: 0;
-}
-
-.slides:has(#radio2:checked) .first {
-  margin-left: -25%;
-}
-
-.slides:has(#radio3:checked) .first {
-  margin-left: -50%;
-}
-
-.slides:has(#radio4:checked) .first {
-  margin-left: -75%;
-}
-
-/* efeito após clicado */
-#radio1:checked {
-  background-color: var(--color-3);
-}
-
-#radio2:checked {
-  background-color: var(--color-3);
-}
-
-#radio3:checked {
-  background-color: var(--color-3);
-}
-#radio4:checked {
-  background-color: var(--color-3);
 }
 
 /* FIM DOBRA SKILLS */
