@@ -277,7 +277,7 @@
   
   .slides {
     width: 400%;
-    height: 400px;
+    height: 100%;
     display: flex;
   }
   
@@ -315,10 +315,6 @@
     margin-right: 40px;
   }
   
-  .slides .navigation input:hover {
-    background-color: var(--color-3);
-  }
-  
   /**
   * Inicio da parte lógica 
   * quando o #radio1 está em checked, sobe hierarquia para o slides e
@@ -343,21 +339,10 @@
   }
   
   /* efeito após clicado */
-  #radio1:checked {
+  .slides .navigation input:checked {
     background-color: var(--color-3);
   }
-  
-  #radio2:checked {
-    background-color: var(--color-3);
-  }
-  
-  #radio3:checked {
-    background-color: var(--color-3);
-  }
-  #radio4:checked {
-    background-color: var(--color-3);
-  }
-  
+
 /* FIM DOBRA CARROSSEL */
 
 /* INICIO DOBRA SKILLS */
