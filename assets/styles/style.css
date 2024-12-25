@@ -343,6 +343,29 @@
     background-color: var(--color-3);
   }
 
+  .side-move-button {
+    height: 400px;
+    width: 200px;
+    position: absolute;
+    filter: sepia(100%) saturate(1000%) hue-rotate(90deg) brightness(0.8);
+  }
+
+  .side-move-button img {
+    height: 45px;
+  }
+
+  .side-button-left {
+      left: 35px;
+    }
+    
+  .side-button-left img {
+    transform: rotate(180deg)
+  }
+
+  .side-button-right {
+    right: 35px;
+}
+
 /* FIM DOBRA CARROSSEL */
 
 /* INICIO DOBRA SKILLS */

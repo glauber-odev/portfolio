@@ -326,11 +326,12 @@ function sideBarShowSubmenu(elemento) {
   let counterCarousel = 1;
   const firstRadioCarousel = document.getElementById("radio1");
   const navigationCarousel = document.querySelector('.navigation');
+  const sideMoveButtonsCarousel = document.querySelectorAll('.side-move-button');
 
   // start counter automatically
   let interval = setInterval(() => {
     go2NextImgCarousel();
-  },5000);
+  },2000);
 
   /**
    * Utility function to restart carousel by the
@@ -360,20 +361,44 @@ function sideBarShowSubmenu(elemento) {
     counterCarousel = startValue;
     interval = setInterval(() => {
       go2NextImgCarousel();
-    },5000);
+    },2000);
   }
+
+  sideMoveButtonsCarousel[0].addEventListener("click", ()=>{
+    console.log(sideMoveButtonsCarousel[0].value)
+    stopCarousel();
+    restartCarousel(sideMoveButtonsCarousel[0].value);
+  });
 
   /**
    * Utility function to go to the next image.
    * In case of try to go after last node value
    * Back to start image value list.
+   * Update forward and backward buttons value to new value
    */
   function go2NextImgCarousel(){
     counterCarousel++;
     const LAST_IMAGE_POSITION = 4;
+    // const FIRST_IMAGE_POSITION = 1;
+
+    // verify if is higher than list size
     if(counterCarousel > LAST_IMAGE_POSITION){
+      // go to the first
       counterCarousel = 1;
+      // adjust to the last when first
+      sideMoveButtonsCarousel[0].value = 4;
+    } else {
+      sideMoveButtonsCarousel[0].value = counterCarousel - 1; 
     }
+
+    // verify if is in the final
+    if(counterCarousel >= LAST_IMAGE_POSITION ){
+      //adjust to the first when final
+      sideMoveButtonsCarousel[1].value = 1;
+    } else {
+      sideMoveButtonsCarousel[1].value = counterCarousel + 1;
+    }
+
     document.getElementById("radio"+counterCarousel).checked = true;
   }
   
