@@ -316,21 +316,14 @@ function sideBarShowSubmenu(elemento) {
   let counterCarousel = 1;
   const firstRadioCarousel = document.getElementById("radio1");
   const navigationCarousel = document.querySelector('.navigation');
-  const navigationCarouselInputs = document.querySelectorAll('input');
+  const navigationCarouselInputs = navigationCarousel.querySelectorAll('input');
 
-  // for( let i of navigationCarouselInputs){
-  //   console.log("O valor é: "+i.id);
-  //   if(i.checked == true){
-  //     console.log("Este é o elemento");
-  //   }
-  // }
+  // by parente element, take son element that has been clicked
+  navigationCarousel.addEventListener('click', (e)=>{
+    console.log(e.target);
+    console.log(e.target.value);
+  })
 
-  // for( let i of navigationCarouselInputs){
-  //   console.log("O valor é: "+i.style.backgroundColor == "#68f327");
-  //   if(i.checked == true){
-  //     console.log("Este é o elemento");
-  //   }
-  // }
   let finishCount = 1;
 
     let intervalo = setInterval(() => {
@@ -349,7 +342,7 @@ function sideBarShowSubmenu(elemento) {
     // 2. zerar a variável intervalo
     // intervalo
     // 3. tomar o valor do novo checked como o valor de counterCarousel
-    // counterCarousel = elemento.querySelectorAll("input").checked == true;
+    // counterCarousel = funcaoPegaElemento()
     // 4. reatribuir a função como valor de intervalo
     // intervalo = setIntervarl(...)
   
