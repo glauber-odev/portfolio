@@ -335,13 +335,31 @@ function sideBarShowSubmenu(elemento) {
 
   /**
    * Utility function to restart carousel by the
-   * clicked position. y parent element, take son
+   * clicked position. Parent element, take son
    * element that has been clicked and send to restart.
    */
   navigationCarousel.addEventListener('click', (e)=>{
     stopCarousel();
     restartCarousel(e.target.value);
   })
+
+    /**
+   * Utility function to restart carousel by the
+   * back position
+   */
+  sideMoveButtonsCarousel[0].addEventListener("click", ()=>{
+    stopCarousel();
+    restartCarousel(sideMoveButtonsCarousel[0].value, 'back');
+  });
+
+   /**
+   * Utility function to restart carousel by the
+   * foward position
+   */
+  sideMoveButtonsCarousel[1].addEventListener("click", ()=>{
+    stopCarousel();
+    restartCarousel(sideMoveButtonsCarousel[1].value, 'forward');
+  });
 
   /**
    * Utility function to stop carousel count.
@@ -356,26 +374,24 @@ function sideBarShowSubmenu(elemento) {
    * Utility function to restart carousel count.
    * This code give interval variable function value
    */
-  function restartCarousel(startValue){
-    //new start value carousel
-    counterCarousel = startValue;
-    console.log(counterCarousel)
-    interval = setInterval(() => {
+  function restartCarousel(startValue, way){
+
+    // verify imediatelly change view to new position
+    if(way == 'forward'){
       go2NextImgCarousel();
-    },2000);
+      console.log('indo pelo caminho direto')
+    } else if(way == 'back'){
+      go2BackImgCarousel();
+    }
+
+    // new start value carousel
+    counterCarousel = startValue;
+
+      interval = setInterval(() => {
+        go2NextImgCarousel();
+      }, 5000);
+
   }
-
-  sideMoveButtonsCarousel[0].addEventListener("click", ()=>{
-    stopCarousel();
-    console.log("Valor enviado: "+sideMoveButtonsCarousel[0].value);
-    restartCarousel(sideMoveButtonsCarousel[0].value);
-  });
-
-  sideMoveButtonsCarousel[1].addEventListener("click", ()=>{
-    stopCarousel();
-    console.log("Valor enviado: "+sideMoveButtonsCarousel[0].value);
-    restartCarousel(sideMoveButtonsCarousel[0].value);
-  });
 
   /**
    * Utility function to go to the next image.
@@ -386,30 +402,70 @@ function sideBarShowSubmenu(elemento) {
   function go2NextImgCarousel(){
     counterCarousel++;
     const LAST_IMAGE_POSITION = 4;
-    // const FIRST_IMAGE_POSITION = 1;
+    const FIRST_IMAGE_POSITION = 1;
 
     // verify if is higher than list size
     if(counterCarousel > LAST_IMAGE_POSITION){
       // go to the first
-      counterCarousel = 1;
-      // adjust to the last when first
-      sideMoveButtonsCarousel[0].value = 4;
-    } else {
-      sideMoveButtonsCarousel[0].value = counterCarousel - 1; 
+      counterCarousel = FIRST_IMAGE_POSITION;
     }
 
-    // verify if is in the final
-    if(counterCarousel >= LAST_IMAGE_POSITION ){
-      //adjust to the first when final
-      sideMoveButtonsCarousel[1].value = 1;
+    // next arrow verfication
+    if(counterCarousel == LAST_IMAGE_POSITION ){
+      // point to first node element
+      sideMoveButtonsCarousel[1].value = FIRST_IMAGE_POSITION;
     } else {
       sideMoveButtonsCarousel[1].value = counterCarousel + 1;
     }
 
+    // backward arrow verfication
+    if(counterCarousel == 1 ){
+      // point to last node element
+      sideMoveButtonsCarousel[0].value = LAST_IMAGE_POSITION;
+    } else {
+      sideMoveButtonsCarousel[0].value = counterCarousel - 1;
+    }
+
+    // here change de view of image
     document.getElementById("radio"+counterCarousel).checked = true;
-    console.log("Input selecionado: "+document.getElementById("radio"+counterCarousel).id);    
   }
   
+    /**
+     * Utility function to go to the back image.
+     * In case of try to go before first node value
+     * Back to the last image value list.
+     * Update forward and backward buttons value to new value
+     */
+  function go2BackImgCarousel(){
+    counterCarousel--;
+    const LAST_IMAGE_POSITION = 4;
+    const FIRST_IMAGE_POSITION = 1;
+
+    // verify if is minor than list size
+    if(counterCarousel < FIRST_IMAGE_POSITION){
+      // go to the first
+      counterCarousel = LAST_IMAGE_POSITION;
+    }
+
+    // back arrow verfication
+    if(counterCarousel == FIRST_IMAGE_POSITION ){
+      // point to last node element
+      sideMoveButtonsCarousel[0].value = LAST_IMAGE_POSITION;
+    } else {
+      sideMoveButtonsCarousel[0].value = counterCarousel - 1;
+    }
+
+    // backward arrow verfication
+    if(counterCarousel == 4 ){
+      // point to first node element
+      sideMoveButtonsCarousel[1].value = FIRST_IMAGE_POSITION;
+    } else {
+      sideMoveButtonsCarousel[1].value = counterCarousel + 1;
+    }
+
+    // here change de view of image
+    document.getElementById("radio"+counterCarousel).checked = true;
+  }
 
 /**
  * END CAROUSEL
