@@ -313,49 +313,70 @@ function sideBarShowSubmenu(elemento) {
  * START CAROUSEL
  */
 
+  /** 1. finalize the count
+  * clearInterval(interval)
+  * 2. reset the interval variable
+  * interval
+  * 3. take the value of the new checked as the value of counterCarousel
+  * counterCarousel = functionGetElement()
+  * 4. reassign the function as the value of interval
+  * interval = setInterval(...)
+  */
+
   let counterCarousel = 1;
   const firstRadioCarousel = document.getElementById("radio1");
   const navigationCarousel = document.querySelector('.navigation');
-  const navigationCarouselInputs = navigationCarousel.querySelectorAll('input');
 
-  // by parente element, take son element that has been clicked
+  // start counter automatically
+  let interval = setInterval(() => {
+    go2NextImgCarousel();
+  },5000);
+
+  /**
+   * Utility function to restart carousel by the
+   * clicked position. y parent element, take son
+   * element that has been clicked and send to restart.
+   */
   navigationCarousel.addEventListener('click', (e)=>{
-    console.log(e.target);
-    console.log(e.target.value);
+    stopCarousel();
+    restartCarousel(e.target.value);
   })
 
-  let finishCount = 1;
+  /**
+   * Utility function to stop carousel count.
+   * This code let interval function unable;
+   */
+  function stopCarousel(){
+    clearInterval(interval);
+    interval = null;
+  }
 
-    let intervalo = setInterval(() => {
+  /**
+   * Utility function to restart carousel count.
+   * This code give interval variable function value
+   */
+  function restartCarousel(startValue){
+    //new start value carousel
+    counterCarousel = startValue;
+    interval = setInterval(() => {
       go2NextImgCarousel();
-      finishCount++
-      // console.log(finishCount);
-      // console.log("Iniciou a contagem.");
-      // if(finishCount > 3 ){
-      //    clearInterval(intervalo);
-      //   }
     },5000);
+  }
 
-    //TODO
-    // 1. finalizar a contagem
-    // clearInterval(intervalo)
-    // 2. zerar a variável intervalo
-    // intervalo
-    // 3. tomar o valor do novo checked como o valor de counterCarousel
-    // counterCarousel = funcaoPegaElemento()
-    // 4. reatribuir a função como valor de intervalo
-    // intervalo = setIntervarl(...)
-  
-  // back to the first image
+  /**
+   * Utility function to go to the next image.
+   * In case of try to go after last node value
+   * Back to start image value list.
+   */
   function go2NextImgCarousel(){
     counterCarousel++;
-    if(counterCarousel > 4){
+    const LAST_IMAGE_POSITION = 4;
+    if(counterCarousel > LAST_IMAGE_POSITION){
       counterCarousel = 1;
     }
-
     document.getElementById("radio"+counterCarousel).checked = true;
-
   }
+  
 
 /**
  * END CAROUSEL
