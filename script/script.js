@@ -359,14 +359,21 @@ function sideBarShowSubmenu(elemento) {
   function restartCarousel(startValue){
     //new start value carousel
     counterCarousel = startValue;
+    console.log(counterCarousel)
     interval = setInterval(() => {
       go2NextImgCarousel();
     },2000);
   }
 
   sideMoveButtonsCarousel[0].addEventListener("click", ()=>{
-    console.log(sideMoveButtonsCarousel[0].value)
     stopCarousel();
+    console.log("Valor enviado: "+sideMoveButtonsCarousel[0].value);
+    restartCarousel(sideMoveButtonsCarousel[0].value);
+  });
+
+  sideMoveButtonsCarousel[1].addEventListener("click", ()=>{
+    stopCarousel();
+    console.log("Valor enviado: "+sideMoveButtonsCarousel[0].value);
     restartCarousel(sideMoveButtonsCarousel[0].value);
   });
 
@@ -400,6 +407,7 @@ function sideBarShowSubmenu(elemento) {
     }
 
     document.getElementById("radio"+counterCarousel).checked = true;
+    console.log("Input selecionado: "+document.getElementById("radio"+counterCarousel).id);    
   }
   
 
