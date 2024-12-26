@@ -57,9 +57,8 @@ contactMeLink.addEventListener("mouseleave", () => {
  * & show a message;
  */
 function copyMailAdress() {
-
   const content = "glauber.vieira.ofi@gmail.com";
-  const copiedMessage = "Email copiado!"
+  const copiedMessage = "Email copiado!";
 
   const unsecuredCopyToClipboard = (text) => {
     const textArea = document.createElement("textarea");
@@ -90,15 +89,15 @@ function copyMailAdress() {
  * START COPY MAIL ADRESS
  */
 
-function showMessage(){
+function showMessage() {
   const modalElement = document.querySelector(".modalMessage");
 
-  modalElement.style.transform = "translateY(0%)"
+  modalElement.style.transform = "translateY(0%)";
   modalElement.style.visibility = "visible";
 
-  setTimeout(()=>{
-    modalElement.style.transform = "translateY(300%)"
-  },3000);
+  setTimeout(() => {
+    modalElement.style.transform = "translateY(300%)";
+  }, 3000);
 }
 
 /**
@@ -264,18 +263,17 @@ function sideBarShowSubmenu(elemento) {
 
   // toggle hide class and icon rotation
   if (ulChild.className == "hide") {
-      ulChild.className = "";
-      imgChild.className = "side-menu__triangle-expand toggle-up";
-    } else {
-      ulChild.className = "hide";
-      imgChild.className = "side-menu__triangle-expand toggle-down";
+    ulChild.className = "";
+    imgChild.className = "side-menu__triangle-expand toggle-up";
+  } else {
+    ulChild.className = "hide";
+    imgChild.className = "side-menu__triangle-expand toggle-down";
   }
 }
 
 /**
  * END SIDE BAR MENU
  */
-
 
 /**
  * START CHANGE CV DOWNLOAD LINK
@@ -293,197 +291,212 @@ function sideBarShowSubmenu(elemento) {
 //  parameters: export=download&id=ID_FROM_YOUR_SHARED_URL
 // link example: https://drive.google.com/uc?export=download&id=1Q5R0WIPMyTEFx59Mp3bIVKfI_rQpbl5_
 
-  function defineUrlDriveDownload(CV_ELEMENT){
-    const DRIVE_DOWNLOAD_BASE_URL = 'https://drive.google.com/uc?export=download&';
-    const DRIVE_FILE_ID = '1Q5R0WIPMyTEFx59Mp3bIVKfI_rQpbl5_';
-  
-    const DRIVE_DONWLOAD_URL = DRIVE_DOWNLOAD_BASE_URL+'id='+DRIVE_FILE_ID;
-    console.log(DRIVE_DONWLOAD_URL);
-    CV_ELEMENT.href = DRIVE_DONWLOAD_URL;
-  }
+function defineUrlDriveDownload(CV_ELEMENT) {
+  const DRIVE_DOWNLOAD_BASE_URL =
+    "https://drive.google.com/uc?export=download&";
+  const DRIVE_FILE_ID = "1Q5R0WIPMyTEFx59Mp3bIVKfI_rQpbl5_";
 
-  const linkCv = document.querySelector('.whoami__links__cv');
-  defineUrlDriveDownload(linkCv);
+  const DRIVE_DONWLOAD_URL = DRIVE_DOWNLOAD_BASE_URL + "id=" + DRIVE_FILE_ID;
+  console.log(DRIVE_DONWLOAD_URL);
+  CV_ELEMENT.href = DRIVE_DONWLOAD_URL;
+}
+
+const linkCv = document.querySelector(".whoami__links__cv");
+defineUrlDriveDownload(linkCv);
 /**
  * START CHANGE CV DOWNLOAD LINK
  */
-
 
 /**
  * START CAROUSEL
  */
 
-  /** 1. finalize the count
-  * clearInterval(interval)
-  * 2. reset the interval variable
-  * interval
-  * 3. take the value of the new checked as the value of counterCarousel
-  * counterCarousel = functionGetElement()
-  * 4. reassign the function as the value of interval
-  * interval = setInterval(...)
-  */
+// Toggle View Button
+const btcarouselToggleView = document.querySelector(
+  ".carousel__bt-toggle-view"
+);
 
-  let counterCarousel = 1;
-  const firstRadioCarousel = document.getElementById("radio1");
-  const navigationCarousel = document.querySelector('.navigation');
-  const sideMoveButtonsCarousel = document.querySelectorAll('.side-move-button');
+/**
+ * Utility function to change completely
+ * carousel view to all project desciption view.
+ * This function use toggle to change views
+ */
+btcarouselToggleView.addEventListener("click", () => {
+  btcarouselToggleView.classList.toggle("carousel__bt-toggle-view__toggle-up");
+  btcarouselToggleView
+    .querySelectorAll("div")[0]
+    .classList.toggle("carousel__bt-toggle-view__circle__toggle-up");
+});
 
-  // start counter automatically
-  let interval = setInterval(() => {
+/** 1. finalize the count
+ * clearInterval(interval)
+ * 2. reset the interval variable
+ * interval
+ * 3. take the value of the new checked as the value of counterCarousel
+ * counterCarousel = functionGetElement()
+ * 4. reassign the function as the value of interval
+ * interval = setInterval(...)
+ */
+
+let counterCarousel = 1;
+const firstRadioCarousel = document.getElementById("radio1");
+const navigationCarousel = document.querySelector(".navigation");
+const sideMoveButtonsCarousel = document.querySelectorAll(".side-move-button");
+
+// start counter automatically
+let interval = setInterval(() => {
+  go2NextImgCarousel();
+}, 5000);
+
+/**
+ * Utility function to restart carousel by the
+ * clicked position. Parent element, take son
+ * element that has been clicked and send to restart.
+ */
+navigationCarousel.addEventListener("click", (e) => {
+  stopCarousel();
+  restartCarousel(e.target.value);
+});
+
+/**
+ * Utility function to restart carousel by the
+ * back position
+ */
+sideMoveButtonsCarousel[0].addEventListener("click", () => {
+  stopCarousel();
+  restartCarousel(sideMoveButtonsCarousel[0].value, "back");
+});
+
+/**
+ * Utility function to restart carousel by the
+ * foward position
+ */
+sideMoveButtonsCarousel[1].addEventListener("click", () => {
+  stopCarousel();
+  restartCarousel(sideMoveButtonsCarousel[1].value, "forward");
+});
+
+/**
+ * Utility function to stop carousel count.
+ * This code let interval function unable;
+ */
+function stopCarousel() {
+  clearInterval(interval);
+  interval = null;
+}
+
+/**
+ * Utility function to restart carousel count.
+ * This code give interval variable function value
+ */
+function restartCarousel(startValue, way) {
+  // verify imediatelly change view to new position
+  if (way == "forward") {
+    go2NextImgCarousel();
+  } else if (way == "back") {
+    go2BackImgCarousel();
+  }
+
+  // new start value carousel
+  counterCarousel = startValue;
+
+  interval = setInterval(() => {
     go2NextImgCarousel();
   }, 5000);
+}
 
-  /**
-   * Utility function to restart carousel by the
-   * clicked position. Parent element, take son
-   * element that has been clicked and send to restart.
-   */
-  navigationCarousel.addEventListener('click', (e)=>{
-    stopCarousel();
-    restartCarousel(e.target.value);
-  })
+/**
+ * Utility function to go to the next image.
+ * In case of try to go after last node value
+ * Back to start image value list.
+ * Update forward and backward buttons value to new value
+ */
+function go2NextImgCarousel() {
+  counterCarousel++;
+  const LAST_IMAGE_POSITION = 4;
+  const FIRST_IMAGE_POSITION = 1;
 
-    /**
-   * Utility function to restart carousel by the
-   * back position
-   */
-  sideMoveButtonsCarousel[0].addEventListener("click", ()=>{
-    stopCarousel();
-    restartCarousel(sideMoveButtonsCarousel[0].value, 'back');
-  });
-
-   /**
-   * Utility function to restart carousel by the
-   * foward position
-   */
-  sideMoveButtonsCarousel[1].addEventListener("click", ()=>{
-    stopCarousel();
-    restartCarousel(sideMoveButtonsCarousel[1].value, 'forward');
-  });
-
-  /**
-   * Utility function to stop carousel count.
-   * This code let interval function unable;
-   */
-  function stopCarousel(){
-    clearInterval(interval);
-    interval = null;
+  // verify if is higher than list size
+  if (counterCarousel > LAST_IMAGE_POSITION) {
+    // go to the first
+    counterCarousel = FIRST_IMAGE_POSITION;
   }
 
-  /**
-   * Utility function to restart carousel count.
-   * This code give interval variable function value
-   */
-  function restartCarousel(startValue, way){
-
-    // verify imediatelly change view to new position
-    if(way == 'forward'){
-      go2NextImgCarousel();
-    } else if(way == 'back'){
-      go2BackImgCarousel();
-    }
-
-    // new start value carousel
-    counterCarousel = startValue;
-
-      interval = setInterval(() => {
-        go2NextImgCarousel();
-      }, 5000);
-
+  // next arrow verfication
+  if (counterCarousel == LAST_IMAGE_POSITION) {
+    // point to first node element
+    sideMoveButtonsCarousel[1].value = FIRST_IMAGE_POSITION;
+  } else {
+    sideMoveButtonsCarousel[1].value = counterCarousel + 1;
   }
 
-  /**
-   * Utility function to go to the next image.
-   * In case of try to go after last node value
-   * Back to start image value list.
-   * Update forward and backward buttons value to new value
-   */
-  function go2NextImgCarousel(){
-    counterCarousel++;
-    const LAST_IMAGE_POSITION = 4;
-    const FIRST_IMAGE_POSITION = 1;
-
-    // verify if is higher than list size
-    if(counterCarousel > LAST_IMAGE_POSITION){
-      // go to the first
-      counterCarousel = FIRST_IMAGE_POSITION;
-    }
-
-    // next arrow verfication
-    if(counterCarousel == LAST_IMAGE_POSITION ){
-      // point to first node element
-      sideMoveButtonsCarousel[1].value = FIRST_IMAGE_POSITION;
-    } else {
-      sideMoveButtonsCarousel[1].value = counterCarousel + 1;
-    }
-
-    // backward arrow verfication
-    if(counterCarousel == 1 ){
-      // point to last node element
-      sideMoveButtonsCarousel[0].value = LAST_IMAGE_POSITION;
-    } else {
-      sideMoveButtonsCarousel[0].value = counterCarousel - 1;
-    }
-
-    // here change de view of image
-    document.getElementById("radio"+counterCarousel).checked = true;
-  }
-  
-    /**
-     * Utility function to go to the back image.
-     * In case of try to go before first node value
-     * Back to the last image value list.
-     * Update forward and backward buttons value to new value
-     */
-  function go2BackImgCarousel(){
-    counterCarousel--;
-    const LAST_IMAGE_POSITION = 4;
-    const FIRST_IMAGE_POSITION = 1;
-
-    // verify if is minor than list size
-    if(counterCarousel < FIRST_IMAGE_POSITION){
-      // go to the first
-      counterCarousel = LAST_IMAGE_POSITION;
-    }
-
-    // back arrow verfication
-    if(counterCarousel == FIRST_IMAGE_POSITION ){
-      // point to last node element
-      sideMoveButtonsCarousel[0].value = LAST_IMAGE_POSITION;
-    } else {
-      sideMoveButtonsCarousel[0].value = counterCarousel - 1;
-    }
-
-    // backward arrow verfication
-    if(counterCarousel == 4 ){
-      // point to first node element
-      sideMoveButtonsCarousel[1].value = FIRST_IMAGE_POSITION;
-    } else {
-      sideMoveButtonsCarousel[1].value = counterCarousel + 1;
-    }
-
-    // here change de view of image
-    document.getElementById("radio"+counterCarousel).checked = true;
+  // backward arrow verfication
+  if (counterCarousel == 1) {
+    // point to last node element
+    sideMoveButtonsCarousel[0].value = LAST_IMAGE_POSITION;
+  } else {
+    sideMoveButtonsCarousel[0].value = counterCarousel - 1;
   }
 
+  // here change de view of image
+  document.getElementById("radio" + counterCarousel).checked = true;
+}
+
+/**
+ * Utility function to go to the back image.
+ * In case of try to go before first node value
+ * Back to the last image value list.
+ * Update forward and backward buttons value to new value
+ */
+function go2BackImgCarousel() {
+  counterCarousel--;
+  const LAST_IMAGE_POSITION = 4;
+  const FIRST_IMAGE_POSITION = 1;
+
+  // verify if is minor than list size
+  if (counterCarousel < FIRST_IMAGE_POSITION) {
+    // go to the first
+    counterCarousel = LAST_IMAGE_POSITION;
+  }
+
+  // back arrow verfication
+  if (counterCarousel == FIRST_IMAGE_POSITION) {
+    // point to last node element
+    sideMoveButtonsCarousel[0].value = LAST_IMAGE_POSITION;
+  } else {
+    sideMoveButtonsCarousel[0].value = counterCarousel - 1;
+  }
+
+  // backward arrow verfication
+  if (counterCarousel == 4) {
+    // point to first node element
+    sideMoveButtonsCarousel[1].value = FIRST_IMAGE_POSITION;
+  } else {
+    sideMoveButtonsCarousel[1].value = counterCarousel + 1;
+  }
+
+  // here change de view of image
+  document.getElementById("radio" + counterCarousel).checked = true;
+}
 
 /**
  * Utility function
- * truncate size of text description forcing 
+ * truncate size of text description forcing
  * to resize and put a know more message
  */
 
-  function truncateText(maxLength) {
-    let element = document.querySelector('.slide-detail__description').innerText
-    let truncated;
+function truncateText(maxLength) {
+  let element = document.querySelector(".slide-detail__description").innerText;
+  let truncated;
 
-    if (element.length > maxLength) {
-        truncated = element.substr(0,maxLength) + '...Saiba mais';
-    }
-    return truncated;
+  if (element.length > maxLength) {
+    truncated = element.substr(0, maxLength) + "...Saiba mais";
+  }
+  return truncated;
 }
 
-document.querySelector('.slide-detail__description').innerText = truncateText(87);
+document.querySelector(".slide-detail__description").innerText =
+  truncateText(87);
 
 /**
  * END CAROUSEL
