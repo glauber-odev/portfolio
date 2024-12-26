@@ -331,7 +331,7 @@ function sideBarShowSubmenu(elemento) {
   // start counter automatically
   let interval = setInterval(() => {
     go2NextImgCarousel();
-  },2000);
+  }, 5000);
 
   /**
    * Utility function to restart carousel by the
@@ -379,7 +379,6 @@ function sideBarShowSubmenu(elemento) {
     // verify imediatelly change view to new position
     if(way == 'forward'){
       go2NextImgCarousel();
-      console.log('indo pelo caminho direto')
     } else if(way == 'back'){
       go2BackImgCarousel();
     }
@@ -466,6 +465,25 @@ function sideBarShowSubmenu(elemento) {
     // here change de view of image
     document.getElementById("radio"+counterCarousel).checked = true;
   }
+
+
+/**
+ * Utility function
+ * truncate size of text description forcing 
+ * to resize and put a know more message
+ */
+
+  function truncateText(maxLength) {
+    let element = document.querySelector('.slide-detail__description').innerText
+    let truncated;
+
+    if (element.length > maxLength) {
+        truncated = element.substr(0,maxLength) + '...Saiba mais';
+    }
+    return truncated;
+}
+
+document.querySelector('.slide-detail__description').innerText = truncateText(87);
 
 /**
  * END CAROUSEL

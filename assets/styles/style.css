@@ -270,8 +270,8 @@
 .slider {
     /* centraliza o conteúdo */
     margin: 0 auto;
-    width: 800px;
-    height: 400px;
+    width: 854px;
+    height: 480px;
     overflow: hidden;
   }
   
@@ -295,8 +295,8 @@
   .slides .navigation {
     /* se posiciona relacionado ao pai */
     position: absolute;
-    width: 800px;
-    margin-top: 360px;
+    width: 854px;
+    margin-top: 440px;
     display: flex;
     justify-content: center;
   }
@@ -344,10 +344,9 @@
   }
 
   .side-move-button {
-    height: 400px;
+    height: 480px;
     width: 200px;
     position: absolute;
-    filter: sepia(100%) saturate(1000%) hue-rotate(90deg) brightness(0.8);
   }
 
   .side-move-button img {
@@ -355,18 +354,43 @@
   }
 
   .side-button-left {
-      left: 35px;
-    }
+    left: 16%;
+  }
     
   .side-button-left img {
     transform: rotate(180deg)
   }
 
   .side-button-right {
-    right: 35px;
+    right: 16%;
 }
 
+
+/* ---------------- */
+.slide-details {
+  position: absolute;
+  margin-top: 300px;
+  margin-left: 170px;
+  background-color: rgba(0, 0, 0, .6 );
+  border-radius: 4px;
+  padding: 8px;
+  max-width: 285px;
+  max-height: 121px;
+  overflow: hidden;
+}
+
+.slide-details > h1 {
+  font-size: 18pt;
+}
+
+.slide-details > p, span {
+  font-size: 13pt;
+}
+/* ---------------- */
+
 /* FIM DOBRA CARROSSEL */
+
+
 
 /* INICIO DOBRA SKILLS */
 .skills__container {
