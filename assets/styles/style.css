@@ -264,14 +264,18 @@
 
 /* INICIO DOBRA CARROSSEL */
 
-.carousel__container__display-views {
-  /* max-width: 100%;
-  overflow: hidden; */
-}
-
 .carousel__container {
   height: 800px;
   flex-direction: column;
+}
+
+.carousel__container__title {
+  color: var(--color-3);
+  font-size: 30pt;
+  font-weight: 700;
+  transition: all 0.2s;
+  cursor: default;
+  margin-bottom: 40px;
 }
 
 .carousel__bt-toggle-view {
@@ -287,9 +291,6 @@
 }
 
 .carousel__hidde-view {
-  /* visibility: hidden;
-  max-width: 0;
-  max-height: 0; */
   display: none;
 }
 
@@ -440,6 +441,9 @@
 
 .carousel__project-details {
   height: 480px;
+  overflow: auto;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 /* ------- FIM SEGUNDA TELA CARROSSEL -------- */
