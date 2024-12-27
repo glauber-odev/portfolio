@@ -264,6 +264,11 @@
 
 /* INICIO DOBRA CARROSSEL */
 
+.carousel__container__display-views {
+  /* max-width: 100%;
+  overflow: hidden; */
+}
+
 .carousel__container {
   height: 800px;
   flex-direction: column;
@@ -282,9 +287,10 @@
 }
 
 .carousel__hidde-view {
-  visibility: hidden;
+  /* visibility: hidden;
   max-width: 0;
-  max-height: 0;
+  max-height: 0; */
+  display: none;
 }
 
 .carousel__bt-toggle-view__toggle-up {
@@ -431,6 +437,10 @@
 /* ---------------- */
 
 /* ------- SEGUNDA TELA CARROSSEL -------- */
+
+.carousel__project-details {
+  height: 480px;
+}
 
 /* ------- FIM SEGUNDA TELA CARROSSEL -------- */
 
