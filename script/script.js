@@ -315,6 +315,8 @@ defineUrlDriveDownload(linkCv);
 const btcarouselToggleView = document.querySelector(
   ".carousel__bt-toggle-view"
 );
+const sliderView = document.querySelector('.slider');
+const carouselProjectDetails= document.querySelector('.carousel__project-details');
 
 /**
  * Utility function to change completely
@@ -322,11 +324,17 @@ const btcarouselToggleView = document.querySelector(
  * This function use toggle to change views
  */
 btcarouselToggleView.addEventListener("click", () => {
+  changeCarouselView();
+});
+
+function changeCarouselView(){
   btcarouselToggleView.classList.toggle("carousel__bt-toggle-view__toggle-up");
   btcarouselToggleView
     .querySelectorAll("div")[0]
     .classList.toggle("carousel__bt-toggle-view__circle__toggle-up");
-});
+  sliderView.classList.toggle('carousel__hidde-view');
+  carouselProjectDetails.classList.toggle('carousel__hidde-view');
+}
 
 /** 1. finalize the count
  * clearInterval(interval)
