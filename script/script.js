@@ -336,6 +336,8 @@ function changeCarouselView(){
   carouselProjectDetails.classList.toggle('carousel__hidde-view');
 }
 
+// carousel__project-details__card__content_right
+
 /** 1. finalize the count
  * clearInterval(interval)
  * 2. reset the interval variable

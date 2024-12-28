@@ -450,8 +450,6 @@
 /* ------- SEGUNDA TELA CARROSSEL -------- */
 
 .carousel__project-details {
-  display: flex;
-  flex-direction: column;
   width: 92vw;
   overflow-y: auto;
   margin-left: 30px;
@@ -466,8 +464,15 @@
   height: 260px;
 }
 
-.carousel__project-details__card__wrapper {
+.carousel__project-details__card__content_right {
 
+  .carousel__project-details__card__content {
+    justify-content: right;
+  }
+
+  .carousel__project-details__card__content__link-wrapper{
+    justify-content: right;
+  }
 }
 
 .carousel__project-details__card__content strong {
@@ -512,6 +517,7 @@
   margin-left: 10px;
   height: 20px;
 }
+
 .carousel__project-details__card__content__repository-link {
   margin-left: 8px;
 }
