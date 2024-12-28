@@ -557,6 +557,90 @@
 
 /* ------- FIM SEGUNDA TELA CARROSSEL -------- */
 
+
+/* ------- RESPONSIVIDADE -------- */
+@media (max-width: 450px){
+
+  .carousel__container {
+    justify-content: normal;
+  }
+
+  .slider {
+    width: 370px;
+    height: 240px;
+  }
+
+  .slides .navigation {
+    width: 370px;
+    margin-top: 200px;
+  }
+
+  .side-move-button {
+    width: 33px;
+    height: 240px;
+  }
+
+  .side-move-button img {
+    height: 30px;
+  }
+
+  .side-button-right {
+    right: 8%;
+  }
+
+  .side-button-left {
+    left: 8%;
+  }
+
+  .slide-details {
+    margin-top: 240px;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 354px;
+  }
+
+  /* SEGUNDA TELA */
+  .carousel__bt-toggle-view {
+    height: 30px;
+    width: 60px;
+  }
+
+  .carousel__bt-toggle-view__circle {
+    height: 24px;
+    width: 24px;
+  }
+
+  .carousel__bt-toggle-view__circle__toggle-up {
+    transform: translateX(29px)
+  }
+
+  .carousel__project-details__card {
+    margin-bottom: 30px;
+  }
+
+  .carousel__project-details__card__wrapper {
+    display: block;
+  }
+
+  .carousel__project-details__card__preview > img {
+    margin-left: 0;
+    margin-right: 0;
+    width: 95%;
+    height: auto;
+  }
+
+  .carousel__project-details__card__content {
+    width: 95%;
+  }
+
+  .carousel__project-details__card__line_divisory {
+    width: 95%;
+    height: 4px;
+    background-color: var(--color-3);
+  }
+}
+/* ------- RESPONSIVIDADE -------- */
+
 /* FIM DOBRA CARROSSEL */
 
 
