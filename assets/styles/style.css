@@ -1,3 +1,9 @@
+/* invert color: balck to white <-> */
+[data-theme='light'] .carousel__project-details__card__content a img {
+  filter: invert();
+}
+
+
 .modalMessage {
   --largura-da-div: 150px;
   height: 50px;
@@ -329,6 +335,7 @@
 .slider {
     /* centraliza o conteúdo */
     margin: 0 auto;
+    margin-bottom: 120px;
     width: 854px;
     height: 480px;
     overflow: hidden;
@@ -436,6 +443,7 @@
   max-width: 285px;
   max-height: 121px;
   overflow: hidden;
+  color: #FFFFFF;
 }
 
 .slide-details > h1 {
@@ -464,15 +472,8 @@
   height: 260px;
 }
 
-.carousel__project-details__card__content_right {
-
-  .carousel__project-details__card__content {
-    justify-content: right;
-  }
-
-  .carousel__project-details__card__content__link-wrapper{
-    justify-content: right;
-  }
+.carousel__project-details__card__content-right {
+    text-align: right;
 }
 
 .carousel__project-details__card__content strong {
@@ -480,10 +481,15 @@
   font-weight: 700;
 }
 
+[data-theme='light'] .carousel__project-details__card__content strong {
+  color: var(--color-3);
+}
+
 .carousel__project-details__card__content > h1 {
   margin-top: 10px;
-  font-size: 13pt;
+  font-size: 14pt;
   margin-bottom: 20px;
+  letter-spacing: .2rem;
 }
 
 .carousel__project-details__card__content__description {
@@ -502,19 +508,29 @@
   flex-direction: row;
 }
 
+.carousel__project-details__card__content__link-wrapper-right {
+  justify-content: right;
+}
+
 .carousel__project-details__card__content a {
   text-decoration: none;
   border: 2px solid var(--color-2);
   padding: 8px;
   border-radius: 20px;
+
+  opacity: .9;
+}
+
+.carousel__project-details__card__content a:hover {
+  opacity: 1;
 }
 
 .carousel__project-details__card__content a > span {
   color: var(--color-2);
 }
 
-.carousel__project-details__card__content__repository-link > img {
-  margin-left: 10px;
+.carousel__project-details__card__content__deploy-link > img {
+  margin-left: 4px;
   height: 20px;
 }
 
@@ -522,8 +538,8 @@
   margin-left: 8px;
 }
 
-.carousel__project-details__card__content__deploy-link > img {
-  margin-left: 15px;
+.carousel__project-details__card__content__repository-link > img {
+  margin-left: 5px;
   height: 20px;
 }
 
@@ -532,6 +548,11 @@
   height: 260px;
   margin-left: 40px;
   margin-right: 40px;
+  transition: .5s ease-in-out;
+}
+
+.carousel__project-details__card__preview > img:hover {
+  transform: scale(1.02);
 }
 
 /* ------- FIM SEGUNDA TELA CARROSSEL -------- */

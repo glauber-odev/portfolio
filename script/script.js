@@ -316,7 +316,7 @@ const btcarouselToggleView = document.querySelector(
   ".carousel__bt-toggle-view"
 );
 const sliderView = document.querySelector('.slider');
-const carouselProjectDetails= document.querySelector('.carousel__project-details');
+const carouselProjectDetails = document.querySelector('.carousel__project-details');
 
 /**
  * Utility function to change completely
@@ -507,6 +507,87 @@ function truncateText(maxLength) {
 
 document.querySelector(".slide-detail__description").innerText =
   truncateText(87);
+
+
+/**
+ * CAROUSEL START SECOND VIEW
+ */
+
+  // carousel__project-details__card__content__link-wrapper-right
+  // carousel__project-details__card__content-right
+
+  //carouselProjectDetails
+
+  let carouselProjectDetailsCard = document.createElement('div')
+  carouselProjectDetailsCard.classList.add('carousel__project-details__card')
+
+  let contentCarouselProjectDetailsCard = `
+            <!-- --- CARD DIV ADICIONADO PELO JS ---- -->
+            <!-- no par mostra o código o texto alinhado à direita e a imagem à direita -->
+            <div class="centralize">
+              <div class="carousel__project-details__card__preview">
+                <img
+                  src="assets/images/projects/programming-course.png"
+                  alt="Preview Image"
+                />
+              </div>
+              <div class="carousel__project-details__card__content">
+                <h1>Olimpo Training</h1>
+                <p
+                  class="carousel__project-details__card__content__description"
+                >
+                  Lorem, ipsum dolor sit amet
+                  <strong> consectetur adipisicing elit.</strong> Atque facilis
+                  accusamus fugit recusandae, aspernatur dolor! Unde earum ipsum
+                  sapiente illo distinctio cum temporibus impedit natus? Vitae
+                  harum magnam eos velit.
+                </p>
+                <p
+                  class="carousel__project-details__card__content__technologies"
+                >
+                  <strong>HTML CSS JavaScript</strong>
+                </p>
+                <div
+                  class="carousel__project-details__card__content__link-wrapper"
+                >
+                  <a
+                    href=""
+                    class="carousel__project-details__card__content__deploy-link centralize"
+                  >
+                    <span>Visualizar</span>
+                    <img
+                      src="assets/images/icons/visibility-eye.svg"
+                      alt="Visualizar"
+                      title="visualizar"
+                    />
+                  </a>
+                  <a
+                    href=""
+                    class="carousel__project-details__card__content__repository-link centralize"
+                  >
+                    <span>Repositório</span>
+                    <img
+                      src="assets/images/logos/github-mark.svg"
+                      alt="repositório"
+                      title="respositório"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          <!-- --- FIM CARD DIV ---- -->`;
+
+          carouselProjectDetailsCard.innerHTML = contentCarouselProjectDetailsCard
+
+          // TODO: separar as duas visualizações e fazer uma função para retornar na ordem
+            for(let i = 0; i < 10; i++){
+              carouselProjectDetails.appendChild(carouselProjectDetailsCard);
+            }
+
+
+/**
+ * CAROUSEL ENE SECOND VIEW
+ */
 
 /**
  * END CAROUSEL
