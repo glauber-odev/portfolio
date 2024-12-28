@@ -1,3 +1,15 @@
+// PROJECTS DATA
+const projectsData = [
+  {
+    "id" : 0,
+    "title" : "",
+    "image" : "programming-course.png",
+    "respositoryLink" : "",
+    "deployLink" : "",
+    "technologies" : ["","",""],
+    "description" : "",
+  }
+]
 /**
  * BEGIN HIDE ELEMENT BEHIND CONTATO
  */
@@ -522,9 +534,10 @@ document.querySelector(".slide-detail__description").innerText =
   carouselProjectDetailsCard.classList.add('carousel__project-details__card')
 
   let contentCarouselProjectDetailsCard = `
-            <!-- --- CARD DIV ADICIONADO PELO JS ---- -->
+          <!-- --- CARD DIV ---- -->
+          <div class="carousel__project-details__card">
             <!-- no par mostra o código o texto alinhado à direita e a imagem à direita -->
-            <div class="centralize">
+            <div class="carousel__project-details__card__wrapper centralize">
               <div class="carousel__project-details__card__preview">
                 <img
                   src="assets/images/projects/programming-course.png"
@@ -574,16 +587,114 @@ document.querySelector(".slide-detail__description").innerText =
                   </a>
                 </div>
               </div>
+              <hr class="carousel__project-details__card__line_divisory" />
             </div>
+          </div>
           <!-- --- FIM CARD DIV ---- -->`;
 
           carouselProjectDetailsCard.innerHTML = contentCarouselProjectDetailsCard
 
           // TODO: separar as duas visualizações e fazer uma função para retornar na ordem
             for(let i = 0; i < 10; i++){
-              carouselProjectDetails.appendChild(carouselProjectDetailsCard);
+
+              // carouselProjectDetails.appendChild(carouselProjectDetailsCard);
+              carouselProjectDetails.appendChild(getProjectCard(i));
+
             }
 
+            function getProjectCard(id){
+              // TODO: pegar JSON os dados do projeto
+              let projectData = projectsData[id];
+              let projectCard = document.createElement('div');
+              projectCard.classList.add("carousel__project-details__card")
+
+              if(id % 2 == 0){
+                projectCard = getProjectCardsectionDescription(projectData) + getProjectCardsectionPreviewImg(projectData);
+              } else {
+                projectCard = getProjectCardsectionPreviewImg(projectData) + getProjectCardsectionDescription(projectData);
+              }
+              console.log(getProjectCard(projectData));
+
+              // <div class="carousel__project-details__card__wrapper centralize">
+
+              return projectCard;
+
+            }
+
+            function getProjectCardsectionPreviewImg(projectData) {
+              let sectionPreviewImage;
+              sectionPreviewImage = document.createElement('div');
+              sectionPreviewImage.classList.add("carousel__project-details__card__preview");
+
+              console.log(projectData)
+              sectionPreviewImage.innerHTML = `
+              <img
+                src="assets/images/projects/${projectData.image}"
+                alt="Preview Image"
+              />
+              `;
+
+              return sectionPreviewImage;
+
+            }
+
+            function getProjectCardsectionDescription(projectData) {
+              let sectionCardContent;
+              sectionCardContent = document.createElement('div')
+              sectionCardContent.classList.add('carousel__project-details__card__content');
+              
+              let concatTehnologies;
+              for( technology of projectData.technologies){
+                concatTehnologies += technology+" ";
+              }
+              concatTehnologies = concatTehnologies.trim();
+
+              sectionCardContent.innerHTML = `
+              <div class="carousel__project-details__card__content">
+                <h1>${projectData.title}</h1>
+                <p
+                  class="carousel__project-details__card__content__description"
+                >
+                  ${projectData.description}
+                </p>
+                <p
+                  class="carousel__project-details__card__content__technologies"
+                >
+                  <strong>${concatTehnologies}
+                  }</strong>
+                </p>
+                <div
+                  class="carousel__project-details__card__content__link-wrapper"
+                >
+                  <a
+                    href="${projectData.deployLink}"
+                    class="carousel__project-details__card__content__deploy-link centralize"
+                  >
+                    <span>Visualizar</span>
+                    <img
+                      src="assets/images/icons/visibility-eye.svg"
+                      alt="Visualizar"
+                      title="visualizar"
+                    />
+                  </a>
+                  <a
+                    href="${projectData.repositoryLink}"
+                    class="carousel__project-details__card__content__repository-link centralize"
+                  >
+                    <span>Repositório</span>
+                    <img
+                      src="assets/images/logos/github-mark.svg"
+                      alt="repositório"
+                      title="respositório"
+                    />
+                  </a>
+                </div>
+              </div>
+              `;
+
+              return sectionCardContent;
+
+            }
 
 /**
  * CAROUSEL ENE SECOND VIEW
