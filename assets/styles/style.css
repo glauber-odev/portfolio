@@ -654,4 +654,131 @@
   background-color: var(--color-2);
 }
 
+.skills__wrapper {
+  color: var(--color-1);
+}
+
+.skills__title {
+  padding-top: 60px;
+  margin-bottom: 60px;
+  margin-left: 40px;
+  color: var(--color-3);
+  font-size: 30pt;
+  font-weight: 700;
+  transition: all 0.2s;
+  cursor: default;
+}
+
+.skills__wrapper {
+  display: flex;
+  flex-direction: row;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.skills__technologies {
+  width: 65%;
+  display: grid;
+  max-height: 600px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  column-gap: 30px;
+  row-gap: 20px;
+}
+
+.skills__technologies__card {
+  width: 150px;
+  height: 150px;
+  border: 3px solid var(--color-1);
+  border-radius: 7px;
+  flex-direction: column;
+  transition: .2s ease-in-out;
+}
+
+.skills__technologies__card:hover {
+  color: var(--color-3);
+  border: 3px solid var(--color-3);
+  transform: scale(1.15);
+}
+
+.skills__technologies__card > img {
+  height: 70px;
+}
+
+.skills__technologies__card > h2 {
+  margin-top: 10px;
+  font-size: 15pt;
+  font-weight: 700;
+}
+
+.skills__services {
+  display: flex;
+  flex-direction: row;
+}
+
+.skills__services__front-end {
+  margin-top: 20px;
+  flex-direction: column;
+  margin-left: 40px;
+  width: 190px;
+  height: 280px;
+  border: 2px solid var(--color-3);
+  border-radius: 10px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(0deg, var(--color-3) 0%, rgba(0, 0, 0, 0) 60%);
+  transition: .3s ease-in-out;
+}
+
+.skills__services__front-end:hover {
+  transform: translateY(-25px);
+}
+
+.skills__services__front-end > img {
+  height: 95px;
+}
+
+.skills__services__front-end > h1 {
+  margin-top: 20px;
+  font-size: 16pt;
+}
+
+.skills__services__front-end > p {
+  margin-top: 7px;
+  max-width: 80%;
+  text-align: center;
+  font-size: 13pt;
+}
+
+.skills__services__back-end {
+  margin-top: 270px;
+  flex-direction: column;
+  margin-left: 20px;
+  width: 190px;
+  height: 280px;
+  border: 2px solid var(--color-3);
+  border-radius: 10px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(0deg, var(--color-3) 0%, rgba(0, 0, 0, 0) 60%);
+  transition: .3s ease-in-out;
+}
+
+.skills__services__back-end:hover {
+  transform: translateY(-25px);
+}
+
+.skills__services__back-end > img {
+  height: 95px;
+}
+
+.skills__services__back-end > h1 {
+  margin-top: 20px;
+  font-size: 16pt;
+}
+
+.skills__services__back-end > p {
+  margin-top: 7px;
+  max-width: 80%;
+  text-align: center;
+  font-size: 13pt;
+}
+
 /* FIM DOBRA SKILLS */
