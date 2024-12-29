@@ -4,10 +4,9 @@ const projectsData = [
     id: 0,
     title: "BuzzFeed",
     image: "buzzfeddCloneMiniature.png",
-    respositoryLink:
-      "https://github.com/glauber-odev/projeto-buzzfeed",
+    respositoryLink: "https://github.com/glauber-odev/projeto-buzzfeed",
     deployLink: "https://buzzfeed-angular-glauber.vercel.app/",
-    technologies: ["Angular","HTML", "CSS", "JavaScript"],
+    technologies: ["Angular", "HTML", "CSS", "JavaScript"],
     description:
       "O Angular BuzzFeed Game é uma aplicação web que utiliza o framework <strong>Angular, HTML, CSS e JavaScript</strong>. O objetivo é fornecer uma experiência divertida para os usuários. Consiste em uma série de perguntas que abordam aspectos da vida e personalidade do usuário. Com base nas respostas, o sistema calcula qual personagem do BuzzFeed mais se assemelha ao perfil do usuário.",
   },
@@ -26,8 +25,7 @@ const projectsData = [
     id: 2,
     title: "Landing Page Curso de Programação",
     image: "programming-course.png",
-    respositoryLink:
-      "https://github.com/glauber-odev/programming-course-site",
+    respositoryLink: "https://github.com/glauber-odev/programming-course-site",
     deployLink: "https://glauber-odev.github.io/programming-course-site/",
     technologies: ["HTML", "CSS", "JavaScript"],
     description:
@@ -37,10 +35,9 @@ const projectsData = [
     id: 3,
     title: "Plyastation Store Clone",
     image: "psn_store_clone_minature.png",
-    respositoryLink:
-      "https://github.com/glauber-odev/store",
+    respositoryLink: "https://github.com/glauber-odev/store",
     deployLink: "https://playstation-store-glauber.vercel.app/",
-    technologies: ["Angular","HTML", "CSS", "JavaScript"],
+    technologies: ["Angular", "HTML", "CSS", "JavaScript"],
     description:
       "Playstation Store Clone é um projeto de clone utilizando componentes do <strong>Angular</strong> e propriedades avançadas de CSS. A idéia é componentizar ao máximo as partes da página para diminuir o acoplamento entre os componentes",
   },
@@ -54,7 +51,7 @@ const projectsData = [
     technologies: ["HTML", "CSS", "JavaScript"],
     description:
       "Este projeto é uma landing page com o estilo de sites de streaming de filmes utilizando o tridente básico do desenvolvimento web: <strong>HTML, CSS e JavaScript</strong>. O tema foi a série lançada do jogo The Last of Us, feito com ajuda dos conhecimentos em desenvolvimento web fornecidos pela Kenzie Academy. Meu primeiro projeto Web.",
-  }
+  },
 ];
 /**
  * BEGIN HIDE ELEMENT BEHIND CONTATO
@@ -355,7 +352,6 @@ function defineUrlDriveDownload(CV_ELEMENT) {
   const DRIVE_FILE_ID = "1Q5R0WIPMyTEFx59Mp3bIVKfI_rQpbl5_";
 
   const DRIVE_DONWLOAD_URL = DRIVE_DOWNLOAD_BASE_URL + "id=" + DRIVE_FILE_ID;
-  console.log(DRIVE_DONWLOAD_URL);
   CV_ELEMENT.href = DRIVE_DONWLOAD_URL;
 }
 
@@ -396,8 +392,6 @@ function changeCarouselView() {
   carouselProjectDetails.classList.toggle("carousel__hidde-view");
 }
 
-// carousel__project-details__card__content_right
-
 /** 1. finalize the count
  * clearInterval(interval)
  * 2. reset the interval variable
@@ -412,6 +406,8 @@ let counterCarousel = 1;
 const firstRadioCarousel = document.getElementById("radio1");
 const navigationCarousel = document.querySelector(".navigation");
 const sideMoveButtonsCarousel = document.querySelectorAll(".side-move-button");
+const slideDetails = document.querySelector(".slide-details");
+const slidesDiv = document.querySelector(".slides");
 
 // start counter automatically
 let interval = setInterval(() => {
@@ -469,6 +465,7 @@ function restartCarousel(startValue, way) {
 
   // new start value carousel
   counterCarousel = startValue;
+  changeCarouselSlideDetails(counterCarousel - 1);
 
   interval = setInterval(() => {
     go2NextImgCarousel();
@@ -510,6 +507,7 @@ function go2NextImgCarousel() {
 
   // here change de view of image
   document.getElementById("radio" + counterCarousel).checked = true;
+  changeCarouselSlideDetails(counterCarousel - 1);
 }
 
 /**
@@ -547,6 +545,19 @@ function go2BackImgCarousel() {
 
   // here change de view of image
   document.getElementById("radio" + counterCarousel).checked = true;
+  changeCarouselSlideDetails(counterCarousel - 1);
+}
+
+/**
+ * Utility function to change the project slide
+ * Details.
+ */
+function changeCarouselSlideDetails(id) {
+  slideDetails.querySelector("h1").innerHTML = projectsData[id].title;
+  slideDetails.querySelector("p").innerHTML = projectsData[id].description;
+
+  //reformatt content to don't overflow the element
+  slideDetails.querySelector("p").innerHTML = truncateText(84);
 }
 
 /**
@@ -560,13 +571,13 @@ function truncateText(maxLength) {
   let truncated;
 
   if (element.length > maxLength) {
-    truncated = element.substr(0, maxLength) + "...Saiba mais";
+    truncated = element.substr(0, maxLength) + "...";
   }
   return truncated;
 }
 
 document.querySelector(".slide-detail__description").innerText =
-  truncateText(87);
+  truncateText(84);
 
 /**
  * CAROUSEL START SECOND VIEW
@@ -580,7 +591,7 @@ carouselProjectDetailsCard.classList.add("carousel__project-details__card");
  * including description, title, image, etc.
  * and add at the document.
  */
-for (let i = 0; i <= projectsData.length; i++) {
+for (let i = 0; i <= projectsData.length - 1; i++) {
   carouselProjectDetails.appendChild(getProjectCard(i));
 }
 
@@ -596,6 +607,7 @@ function getProjectCard(id) {
   let cardWrapper;
   let projectCard = document.createElement("div");
   projectCard.classList.add("carousel__project-details__card");
+  projectCard.id = "project-n-" + id;
 
   if (id % 2 == 0) {
     cardWrapper = `
