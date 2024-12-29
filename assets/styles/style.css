@@ -491,7 +491,7 @@
   font-size: 12pt;
   margin-bottom: 20px;
   color: var(--color-5);
-  max-height: 114px;
+  max-height: 112px;
   overflow: auto;
 }
 
@@ -597,6 +597,15 @@
   }
 
   /* SEGUNDA TELA */
+  .carousel__project-details {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .carousel__project-details__card {
+    height: 600px;
+  }
+
   .carousel__bt-toggle-view {
     height: 30px;
     width: 60px;
