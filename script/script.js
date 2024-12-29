@@ -2,12 +2,30 @@
 const projectsData = [
   {
     "id" : 0,
-    "title" : "",
+    "title" : "Olimpo Training",
     "image" : "programming-course.png",
-    "respositoryLink" : "",
-    "deployLink" : "",
-    "technologies" : ["","",""],
-    "description" : "",
+    "respositoryLink" : "https://github.com/Organizacao-do-projeto/Olimpo_Training",
+    "deployLink" : "https://olimpo-training.ct.ws/Olimpo_Training/",
+    "technologies" : ["HTML","CSS","JavaScript"],
+    "description" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque facilis accusamus fugit recusandae, aspernatur dolor! Unde earum ipsum sapiente illo distinctio cum temporibus impedit natus? Vitae harum magnam eos velit.",
+  },
+  {
+    "id" : 0,
+    "title" : "Olimpo Training",
+    "image" : "programming-course.png",
+    "respositoryLink" : "https://github.com/Organizacao-do-projeto/Olimpo_Training",
+    "deployLink" : "https://olimpo-training.ct.ws/Olimpo_Training/",
+    "technologies" : ["HTML","CSS","JavaScript"],
+    "description" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque facilis accusamus fugit recusandae, aspernatur dolor! Unde earum ipsum sapiente illo distinctio cum temporibus impedit natus? Vitae harum magnam eos velit.",
+  },
+  {
+    "id" : 0,
+    "title" : "Olimpo Training",
+    "image" : "programming-course.png",
+    "respositoryLink" : "https://github.com/Organizacao-do-projeto/Olimpo_Training",
+    "deployLink" : "https://olimpo-training.ct.ws/Olimpo_Training/",
+    "technologies" : ["HTML","CSS","JavaScript"],
+    "description" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque facilis accusamus fugit recusandae, aspernatur dolor! Unde earum ipsum sapiente illo distinctio cum temporibus impedit natus? Vitae harum magnam eos velit.",
   }
 ]
 /**
@@ -595,7 +613,7 @@ document.querySelector(".slide-detail__description").innerText =
           carouselProjectDetailsCard.innerHTML = contentCarouselProjectDetailsCard
 
           // TODO: separar as duas visualizações e fazer uma função para retornar na ordem
-            for(let i = 0; i < 10; i++){
+            for(let i = 0; i <= 10; i++){
 
               // carouselProjectDetails.appendChild(carouselProjectDetailsCard);
               carouselProjectDetails.appendChild(getProjectCard(i));
@@ -603,53 +621,58 @@ document.querySelector(".slide-detail__description").innerText =
             }
 
             function getProjectCard(id){
-              // TODO: pegar JSON os dados do projeto
+
               let projectData = projectsData[id];
+              let cardWrapper;
               let projectCard = document.createElement('div');
               projectCard.classList.add("carousel__project-details__card")
 
-              if(id % 2 == 0){
-                projectCard = getProjectCardsectionDescription(projectData) + getProjectCardsectionPreviewImg(projectData);
+              if(id % 2 == 0){    
+                cardWrapper = `
+                <div class="carousel__project-details__card__wrapper centralize">
+                  ${getProjectCardsectionPreviewImg(projectData) + getProjectCardsectionDescription(projectData)}
+                  <hr class="carousel__project-details__card__line_divisory" />
+                </div>`;            
               } else {
-                projectCard = getProjectCardsectionPreviewImg(projectData) + getProjectCardsectionDescription(projectData);
+                cardWrapper = `
+                <div class="carousel__project-details__card__wrapper centralize">
+                  ${getProjectCardsectionDescription(projectData) + getProjectCardsectionPreviewImg(projectData)}
+                  <hr class="carousel__project-details__card__line_divisory" />
+                </div>`;
               }
-              console.log(getProjectCard(projectData));
-
-              // <div class="carousel__project-details__card__wrapper centralize">
+              projectCard.innerHTML = cardWrapper;
 
               return projectCard;
 
             }
 
             function getProjectCardsectionPreviewImg(projectData) {
+
               let sectionPreviewImage;
-              sectionPreviewImage = document.createElement('div');
-              sectionPreviewImage.classList.add("carousel__project-details__card__preview");
 
-              console.log(projectData)
-              sectionPreviewImage.innerHTML = `
-              <img
-                src="assets/images/projects/${projectData.image}"
-                alt="Preview Image"
-              />
-              `;
-
+              sectionPreviewImage = `
+              <div class="carousel__project-details__card__preview">
+                <img
+                  src="assets/images/projects/${projectData.image}"
+                  alt="Preview Image"
+                />
+              </div>`
+              
               return sectionPreviewImage;
 
             }
 
             function getProjectCardsectionDescription(projectData) {
+
               let sectionCardContent;
-              sectionCardContent = document.createElement('div')
-              sectionCardContent.classList.add('carousel__project-details__card__content');
               
-              let concatTehnologies;
+              let concatTehnologies = '';
               for( technology of projectData.technologies){
                 concatTehnologies += technology+" ";
               }
               concatTehnologies = concatTehnologies.trim();
 
-              sectionCardContent.innerHTML = `
+              sectionCardContent = `
               <div class="carousel__project-details__card__content">
                 <h1>${projectData.title}</h1>
                 <p
@@ -661,13 +684,13 @@ document.querySelector(".slide-detail__description").innerText =
                   class="carousel__project-details__card__content__technologies"
                 >
                   <strong>${concatTehnologies}
-                  }</strong>
+                  </strong>
                 </p>
                 <div
                   class="carousel__project-details__card__content__link-wrapper"
                 >
                   <a
-                    href="${projectData.deployLink}"
+                    href="${projectData.deployLink}" target="_blank"
                     class="carousel__project-details__card__content__deploy-link centralize"
                   >
                     <span>Visualizar</span>
@@ -678,7 +701,7 @@ document.querySelector(".slide-detail__description").innerText =
                     />
                   </a>
                   <a
-                    href="${projectData.repositoryLink}"
+                    href="${projectData.respositoryLink}" target="_blank"
                     class="carousel__project-details__card__content__repository-link centralize"
                   >
                     <span>Repositório</span>
