@@ -1,33 +1,39 @@
 // PROJECTS DATA
 const projectsData = [
   {
-    "id" : 0,
-    "title" : "Olimpo Training",
-    "image" : "programming-course.png",
-    "respositoryLink" : "https://github.com/Organizacao-do-projeto/Olimpo_Training",
-    "deployLink" : "https://olimpo-training.ct.ws/Olimpo_Training/",
-    "technologies" : ["HTML","CSS","JavaScript"],
-    "description" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque facilis accusamus fugit recusandae, aspernatur dolor! Unde earum ipsum sapiente illo distinctio cum temporibus impedit natus? Vitae harum magnam eos velit.",
+    id: 0,
+    title: "Olimpo Training",
+    image: "programming-course.png",
+    respositoryLink:
+      "https://github.com/Organizacao-do-projeto/Olimpo_Training",
+    deployLink: "https://olimpo-training.ct.ws/Olimpo_Training/",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    description:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque facilis accusamus fugit recusandae, aspernatur dolor! Unde earum ipsum sapiente illo distinctio cum temporibus impedit natus? Vitae harum magnam eos velit.",
   },
   {
-    "id" : 0,
-    "title" : "Olimpo Training",
-    "image" : "programming-course.png",
-    "respositoryLink" : "https://github.com/Organizacao-do-projeto/Olimpo_Training",
-    "deployLink" : "https://olimpo-training.ct.ws/Olimpo_Training/",
-    "technologies" : ["HTML","CSS","JavaScript"],
-    "description" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque facilis accusamus fugit recusandae, aspernatur dolor! Unde earum ipsum sapiente illo distinctio cum temporibus impedit natus? Vitae harum magnam eos velit.",
+    id: 0,
+    title: "Olimpo Training",
+    image: "programming-course.png",
+    respositoryLink:
+      "https://github.com/Organizacao-do-projeto/Olimpo_Training",
+    deployLink: "https://olimpo-training.ct.ws/Olimpo_Training/",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    description:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque facilis accusamus fugit recusandae, aspernatur dolor! Unde earum ipsum sapiente illo distinctio cum temporibus impedit natus? Vitae harum magnam eos velit.",
   },
   {
-    "id" : 0,
-    "title" : "Olimpo Training",
-    "image" : "programming-course.png",
-    "respositoryLink" : "https://github.com/Organizacao-do-projeto/Olimpo_Training",
-    "deployLink" : "https://olimpo-training.ct.ws/Olimpo_Training/",
-    "technologies" : ["HTML","CSS","JavaScript"],
-    "description" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque facilis accusamus fugit recusandae, aspernatur dolor! Unde earum ipsum sapiente illo distinctio cum temporibus impedit natus? Vitae harum magnam eos velit.",
-  }
-]
+    id: 0,
+    title: "Olimpo Training",
+    image: "programming-course.png",
+    respositoryLink:
+      "https://github.com/Organizacao-do-projeto/Olimpo_Training",
+    deployLink: "https://olimpo-training.ct.ws/Olimpo_Training/",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    description:
+      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque facilis accusamus fugit recusandae, aspernatur dolor! Unde earum ipsum sapiente illo distinctio cum temporibus impedit natus? Vitae harum magnam eos velit.",
+  },
+];
 /**
  * BEGIN HIDE ELEMENT BEHIND CONTATO
  */
@@ -345,8 +351,10 @@ defineUrlDriveDownload(linkCv);
 const btcarouselToggleView = document.querySelector(
   ".carousel__bt-toggle-view"
 );
-const sliderView = document.querySelector('.slider');
-const carouselProjectDetails = document.querySelector('.carousel__project-details');
+const sliderView = document.querySelector(".slider");
+const carouselProjectDetails = document.querySelector(
+  ".carousel__project-details"
+);
 
 /**
  * Utility function to change completely
@@ -357,13 +365,13 @@ btcarouselToggleView.addEventListener("click", () => {
   changeCarouselView();
 });
 
-function changeCarouselView(){
+function changeCarouselView() {
   btcarouselToggleView.classList.toggle("carousel__bt-toggle-view__toggle-up");
   btcarouselToggleView
     .querySelectorAll("div")[0]
     .classList.toggle("carousel__bt-toggle-view__circle__toggle-up");
-  sliderView.classList.toggle('carousel__hidde-view');
-  carouselProjectDetails.classList.toggle('carousel__hidde-view');
+  sliderView.classList.toggle("carousel__hidde-view");
+  carouselProjectDetails.classList.toggle("carousel__hidde-view");
 }
 
 // carousel__project-details__card__content_right
@@ -538,141 +546,91 @@ function truncateText(maxLength) {
 document.querySelector(".slide-detail__description").innerText =
   truncateText(87);
 
-
 /**
  * CAROUSEL START SECOND VIEW
  */
 
-  // carousel__project-details__card__content__link-wrapper-right
-  // carousel__project-details__card__content-right
+let carouselProjectDetailsCard = document.createElement("div");
+carouselProjectDetailsCard.classList.add("carousel__project-details__card");
 
-  //carouselProjectDetails
+/**
+ * Utility function to iterate projects data
+ * including description, title, image, etc.
+ * and add at the document.
+ */
+for (let i = 0; i <= projectsData.length; i++) {
+  carouselProjectDetails.appendChild(getProjectCard(i));
+}
 
-  let carouselProjectDetailsCard = document.createElement('div')
-  carouselProjectDetailsCard.classList.add('carousel__project-details__card')
+/**
+ * Utility function to fill div card wrapper with
+ * project data. it recives the projects id and fetch its
+ * informations. One div present with image in left position
+ * other in right position consecutivelly and return to add
+ * at the DOM.
+ */
+function getProjectCard(id) {
+  let projectData = projectsData[id];
+  let cardWrapper;
+  let projectCard = document.createElement("div");
+  projectCard.classList.add("carousel__project-details__card");
 
-  let contentCarouselProjectDetailsCard = `
-          <!-- --- CARD DIV ---- -->
-          <div class="carousel__project-details__card">
-            <!-- no par mostra o código o texto alinhado à direita e a imagem à direita -->
-            <div class="carousel__project-details__card__wrapper centralize">
-              <div class="carousel__project-details__card__preview">
-                <img
-                  src="assets/images/projects/programming-course.png"
-                  alt="Preview Image"
-                />
-              </div>
-              <div class="carousel__project-details__card__content">
-                <h1>Olimpo Training</h1>
-                <p
-                  class="carousel__project-details__card__content__description"
-                >
-                  Lorem, ipsum dolor sit amet
-                  <strong> consectetur adipisicing elit.</strong> Atque facilis
-                  accusamus fugit recusandae, aspernatur dolor! Unde earum ipsum
-                  sapiente illo distinctio cum temporibus impedit natus? Vitae
-                  harum magnam eos velit.
-                </p>
-                <p
-                  class="carousel__project-details__card__content__technologies"
-                >
-                  <strong>HTML CSS JavaScript</strong>
-                </p>
-                <div
-                  class="carousel__project-details__card__content__link-wrapper"
-                >
-                  <a
-                    href=""
-                    class="carousel__project-details__card__content__deploy-link centralize"
-                  >
-                    <span>Visualizar</span>
-                    <img
-                      src="assets/images/icons/visibility-eye.svg"
-                      alt="Visualizar"
-                      title="visualizar"
-                    />
-                  </a>
-                  <a
-                    href=""
-                    class="carousel__project-details__card__content__repository-link centralize"
-                  >
-                    <span>Repositório</span>
-                    <img
-                      src="assets/images/logos/github-mark.svg"
-                      alt="repositório"
-                      title="respositório"
-                    />
-                  </a>
-                </div>
-              </div>
-              <hr class="carousel__project-details__card__line_divisory" />
-            </div>
-          </div>
-          <!-- --- FIM CARD DIV ---- -->`;
-
-          carouselProjectDetailsCard.innerHTML = contentCarouselProjectDetailsCard
-
-          // TODO: separar as duas visualizações e fazer uma função para retornar na ordem
-            for(let i = 0; i <= 10; i++){
-
-              // carouselProjectDetails.appendChild(carouselProjectDetailsCard);
-              carouselProjectDetails.appendChild(getProjectCard(i));
-
-            }
-
-            function getProjectCard(id){
-
-              let projectData = projectsData[id];
-              let cardWrapper;
-              let projectCard = document.createElement('div');
-              projectCard.classList.add("carousel__project-details__card")
-
-              if(id % 2 == 0){    
-                cardWrapper = `
+  if (id % 2 == 0) {
+    cardWrapper = `
                 <div class="carousel__project-details__card__wrapper centralize">
-                  ${getProjectCardsectionPreviewImg(projectData) + getProjectCardsectionDescription(projectData)}
-                  <hr class="carousel__project-details__card__line_divisory" />
-                </div>`;            
-              } else {
-                cardWrapper = `
-                <div class="carousel__project-details__card__wrapper centralize">
-                  ${getProjectCardsectionDescription(projectData) + getProjectCardsectionPreviewImg(projectData)}
+                  ${
+                    getProjectCardsectionPreviewImg(projectData) +
+                    getProjectCardsectionDescription(projectData)
+                  }
                   <hr class="carousel__project-details__card__line_divisory" />
                 </div>`;
-              }
-              projectCard.innerHTML = cardWrapper;
+  } else {
+    cardWrapper = `
+                <div class="carousel__project-details__card__wrapper centralize">
+                  ${
+                    getProjectCardsectionDescription(projectData) +
+                    getProjectCardsectionPreviewImg(projectData)
+                  }
+                  <hr class="carousel__project-details__card__line_divisory" />
+                </div>`;
+  }
+  projectCard.innerHTML = cardWrapper;
 
-              return projectCard;
+  return projectCard;
+}
 
-            }
+/**
+ * Utility function to fill img atributes
+ */
+function getProjectCardsectionPreviewImg(projectData) {
+  let sectionPreviewImage;
 
-            function getProjectCardsectionPreviewImg(projectData) {
-
-              let sectionPreviewImage;
-
-              sectionPreviewImage = `
+  sectionPreviewImage = `
               <div class="carousel__project-details__card__preview">
                 <img
                   src="assets/images/projects/${projectData.image}"
                   alt="Preview Image"
                 />
-              </div>`
-              
-              return sectionPreviewImage;
+              </div>`;
 
-            }
+  return sectionPreviewImage;
+}
 
-            function getProjectCardsectionDescription(projectData) {
+/**
+ * Utility function to fill details project atributes.
+ * Notice that technologies is a vector and the for is
+ * used to iterate and concat every items.
+ */
+function getProjectCardsectionDescription(projectData) {
+  let sectionCardContent;
+  let concatTehnologies = "";
 
-              let sectionCardContent;
-              
-              let concatTehnologies = '';
-              for( technology of projectData.technologies){
-                concatTehnologies += technology+" ";
-              }
-              concatTehnologies = concatTehnologies.trim();
+  for (technology of projectData.technologies) {
+    concatTehnologies += technology + " ";
+  }
+  concatTehnologies = concatTehnologies.trim();
 
-              sectionCardContent = `
+  sectionCardContent = `
               <div class="carousel__project-details__card__content">
                 <h1>${projectData.title}</h1>
                 <p
@@ -715,9 +673,8 @@ document.querySelector(".slide-detail__description").innerText =
               </div>
               `;
 
-              return sectionCardContent;
-
-            }
+  return sectionCardContent;
+}
 
 /**
  * CAROUSEL ENE SECOND VIEW
