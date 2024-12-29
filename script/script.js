@@ -2,37 +2,59 @@
 const projectsData = [
   {
     id: 0,
-    title: "Olimpo Training",
-    image: "programming-course.png",
+    title: "BuzzFeed",
+    image: "buzzfeddCloneMiniature.png",
     respositoryLink:
-      "https://github.com/Organizacao-do-projeto/Olimpo_Training",
-    deployLink: "https://olimpo-training.ct.ws/Olimpo_Training/",
-    technologies: ["HTML", "CSS", "JavaScript"],
+      "https://github.com/glauber-odev/projeto-buzzfeed",
+    deployLink: "https://buzzfeed-angular-glauber.vercel.app/",
+    technologies: ["Angular","HTML", "CSS", "JavaScript"],
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque facilis accusamus fugit recusandae, aspernatur dolor! Unde earum ipsum sapiente illo distinctio cum temporibus impedit natus? Vitae harum magnam eos velit.",
+      "O Angular BuzzFeed Game é uma aplicação web que utiliza o framework <strong>Angular, HTML, CSS e JavaScript</strong>. O objetivo é fornecer uma experiência divertida para os usuários. Consiste em uma série de perguntas que abordam aspectos da vida e personalidade do usuário. Com base nas respostas, o sistema calcula qual personagem do BuzzFeed mais se assemelha ao perfil do usuário.",
   },
   {
-    id: 0,
+    id: 1,
     title: "Olimpo Training",
-    image: "programming-course.png",
+    image: "olimpoTrainingMiniature.png",
     respositoryLink:
       "https://github.com/Organizacao-do-projeto/Olimpo_Training",
     deployLink: "https://olimpo-training.ct.ws/Olimpo_Training/",
-    technologies: ["HTML", "CSS", "JavaScript"],
+    technologies: ["PHP", "MySql", "HTML", "CSS", "JavaScript"],
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque facilis accusamus fugit recusandae, aspernatur dolor! Unde earum ipsum sapiente illo distinctio cum temporibus impedit natus? Vitae harum magnam eos velit.",
+      "Projeto voltado a academias proporcionando uma plataforma de suporte tanto para personal trainers como para alunos. <strong>Back-end</strong> foi feito utilizando <strong>banco de dados relacional, PHP</strong>. Nela é possível fazer fichas de treino, gerar PDF e consultar detalhes de cada exercício físico.",
   },
   {
-    id: 0,
-    title: "Olimpo Training",
+    id: 2,
+    title: "Landing Page Curso de Programação",
     image: "programming-course.png",
     respositoryLink:
-      "https://github.com/Organizacao-do-projeto/Olimpo_Training",
-    deployLink: "https://olimpo-training.ct.ws/Olimpo_Training/",
+      "https://github.com/glauber-odev/programming-course-site",
+    deployLink: "https://glauber-odev.github.io/programming-course-site/",
     technologies: ["HTML", "CSS", "JavaScript"],
     description:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque facilis accusamus fugit recusandae, aspernatur dolor! Unde earum ipsum sapiente illo distinctio cum temporibus impedit natus? Vitae harum magnam eos velit.",
+      "A landing page do curso de programação Full-Stack Web Master é projetada para atrair e converter visitantes em alunos, destacando o aprendizado de <strong>HTML, CSS e JavaScript</strong>. Com uma estrutura clara e visualmente atraente, ela apresenta os benefícios do curso, depoimentos de alunos. O foco é fornecer informações práticas e garantir que o usuário se sinta confiante para iniciar sua jornada de aprendizado.",
   },
+  {
+    id: 3,
+    title: "Plyastation Store Clone",
+    image: "psn_store_clone_minature.png",
+    respositoryLink:
+      "https://github.com/glauber-odev/store",
+    deployLink: "https://playstation-store-glauber.vercel.app/",
+    technologies: ["Angular","HTML", "CSS", "JavaScript"],
+    description:
+      "Playstation Store Clone é um projeto de clone utilizando componentes do <strong>Angular</strong> e propriedades avançadas de CSS. A idéia é componentizar ao máximo as partes da página para diminuir o acoplamento entre os componentes",
+  },
+  {
+    id: 4,
+    title: "The Last Of Us Course Serie Page",
+    image: "theLastofUsMiniature.png",
+    respositoryLink:
+      "https://github.com/glauber-odev/landing_page_the_last_of_us",
+    deployLink: "https://landing-page-the-last-of-us.vercel.app/",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    description:
+      "Este projeto é uma landing page com o estilo de sites de streaming de filmes utilizando o tridente básico do desenvolvimento web: <strong>HTML, CSS e JavaScript</strong>. O tema foi a série lançada do jogo The Last of Us, feito com ajuda dos conhecimentos em desenvolvimento web fornecidos pela Kenzie Academy. Meu primeiro projeto Web.",
+  }
 ];
 /**
  * BEGIN HIDE ELEMENT BEHIND CONTATO
@@ -626,7 +648,7 @@ function getProjectCardsectionDescription(projectData) {
   let concatTehnologies = "";
 
   for (technology of projectData.technologies) {
-    concatTehnologies += technology + " ";
+    concatTehnologies += technology + " • ";
   }
   concatTehnologies = concatTehnologies.trim();
 

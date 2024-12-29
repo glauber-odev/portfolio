@@ -41,6 +41,14 @@
 }
 /* FIM DOBRA SCROLL BAR */
 
+strong {
+  color: var(--color-4);
+  font-weight: 700;
+}
+
+[data-theme='light'] strong {
+  color: var(--color-3);
+}
 /**
 * DEIXA O SCROLL MAIS SUAVE E DE ACORDO
 * COM O ATRIBUTO PRÉ SETADO PELO USER
