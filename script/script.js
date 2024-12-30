@@ -591,9 +591,12 @@ carouselProjectDetailsCard.classList.add("carousel__project-details__card");
  * including description, title, image, etc.
  * and add at the document.
  */
-for (let i = 0; i <= projectsData.length - 1; i++) {
-  carouselProjectDetails.appendChild(getProjectCard(i));
+function fillCaorouselProjectDetails(){
+  for (let i = 0; i <= projectsData.length - 1; i++) {
+    carouselProjectDetails.appendChild(getProjectCard(i));
+  }
 }
+fillCaorouselProjectDetails();
 
 /**
  * Utility function to fill div card wrapper with
@@ -614,7 +617,7 @@ function getProjectCard(id) {
                 <div class="carousel__project-details__card__wrapper centralize">
                   ${
                     getProjectCardsectionPreviewImg(projectData) +
-                    getProjectCardsectionDescription(projectData)
+                    getProjectCardsectionDescription(projectData, false)
                   }
                   <hr class="carousel__project-details__card__line_divisory" />
                 </div>`;
@@ -622,7 +625,7 @@ function getProjectCard(id) {
     cardWrapper = `
                 <div class="carousel__project-details__card__wrapper centralize">
                   ${
-                    getProjectCardsectionDescription(projectData) +
+                    getProjectCardsectionDescription(projectData, true) +
                     getProjectCardsectionPreviewImg(projectData)
                   }
                   <hr class="carousel__project-details__card__line_divisory" />
@@ -655,9 +658,14 @@ function getProjectCardsectionPreviewImg(projectData) {
  * Notice that technologies is a vector and the for is
  * used to iterate and concat every items.
  */
-function getProjectCardsectionDescription(projectData) {
+function getProjectCardsectionDescription(projectData, odd) {
   let sectionCardContent;
   let concatTehnologies = "";
+  let justifyItemsRight = [ "carousel__project-details__card__content-right",
+                            "carousel__project-details__card__content__link-wrapper-right"]
+  if(!odd){
+    justifyItemsRight = "";
+  }
 
   for (technology of projectData.technologies) {
     concatTehnologies += technology + " • ";
@@ -665,7 +673,7 @@ function getProjectCardsectionDescription(projectData) {
   concatTehnologies = concatTehnologies.trim();
 
   sectionCardContent = `
-              <div class="carousel__project-details__card__content">
+              <div class="carousel__project-details__card__content ${justifyItemsRight[0]}">
                 <h1>${projectData.title}</h1>
                 <p
                   class="carousel__project-details__card__content__description"
@@ -679,7 +687,7 @@ function getProjectCardsectionDescription(projectData) {
                   </strong>
                 </p>
                 <div
-                  class="carousel__project-details__card__content__link-wrapper"
+                  class="carousel__project-details__card__content__link-wrapper ${justifyItemsRight[1]}"
                 >
                   <a
                     href="${projectData.deployLink}" target="_blank"

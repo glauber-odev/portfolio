@@ -624,6 +624,12 @@
     display: block;
   }
 
+  /* disable the reverse presentation section */
+  .carousel__project-details__card__wrapper:has(.carousel__project-details__card__content-right) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
   .carousel__project-details__card__preview > img {
     margin-left: 0;
     margin-right: 0;
@@ -633,6 +639,15 @@
 
   .carousel__project-details__card__content {
     width: 95%;
+  }
+
+  .carousel__project-details__card__content-right {
+    text-align: left;
+  }
+
+
+  .carousel__project-details__card__content__link-wrapper-right {
+    justify-content: left;
   }
 
   .carousel__project-details__card__line_divisory {
@@ -681,6 +696,7 @@
   display: grid;
   max-height: 600px;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
   column-gap: 30px;
   row-gap: 20px;
 }
@@ -779,6 +795,25 @@
   max-width: 80%;
   text-align: center;
   font-size: 13pt;
+}
+
+/* ---- RESPONSIVIDADE ---- */
+@media (max-width: 450px) {
+
+  .skills__container {
+    height: 1200px;
+    max-height: 1200px;
+  }
+
+  /* .skills__technologies {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+  } */
+
+  .skills__services {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 /* FIM DOBRA SKILLS */
