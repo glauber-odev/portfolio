@@ -694,16 +694,18 @@
 .skills__technologies {
   width: 65%;
   display: grid;
-  max-height: 600px;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+  height: 700px;
+  /* max-height: 600px; */
+  grid-template-columns: repeat(auto-fit, minmax(106px, 150px));
+  grid-template-rows: repeat(auto-fit, minmax(118px, 150px));
   column-gap: 30px;
   row-gap: 20px;
+  overflow-y: auto;
 }
 
 .skills__technologies__card {
-  width: 150px;
-  height: 150px;
+  /* width: 150px;
+  height: 150px; */
   border: 3px solid var(--color-1);
   border-radius: 7px;
   flex-direction: column;
@@ -801,19 +803,50 @@
 @media (max-width: 450px) {
 
   .skills__container {
-    height: 1200px;
-    max-height: 1200px;
+    height: 1600px;
+    max-height: 1600px;
   }
 
-  /* .skills__technologies {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
-  } */
+  .skills__technologies {
+    width: auto;
+    height: 800px;
+    grid-template-columns: repeat(auto-fit, minmax(30px, 120px));
+    grid-template-rows: repeat(auto-fit, minmax(30px, 120px));
+    /* grid-template-columns: repeat(auto-fit, minmax(30px, 60px));
+    grid-template-rows: repeat(auto-fit, minmax(30px, 60px)); */
+    column-gap: 20px;
+    row-gap: 10px;
+  }
 
-  .skills__services {
-    display: flex;
+  .skills__wrapper {
     flex-direction: column;
   }
+
+  .skills__technologies__card > img {
+    height: 40px;
+  }
+
+  .skills__technologies__card > h2 {
+    font-size: 13pt;
+  }
+
+  .skills__services__front-end > img {
+    height: 80px;
+  }
+
+  .skills__services__front-end > p {
+    font-size: 13pt;
+  }
+
+  .skills__services__back-end > img {
+    height: 80px;
+  }
+
+  .skills__services__back-end > p {
+    font-size: 13pt;
+    word-wrap: break-word;
+  }
+
 }
 
 /* FIM DOBRA SKILLS */
