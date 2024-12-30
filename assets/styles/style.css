@@ -704,12 +704,24 @@
 }
 
 .skills__technologies__card {
-  /* width: 150px;
-  height: 150px; */
-  border: 3px solid var(--color-1);
+  /* border: 3px solid var(--color-1); */
   border-radius: 7px;
   flex-direction: column;
   transition: .2s ease-in-out;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+[data-theme="dark"] .skills__technologies__card {
+  background-color: #E5E7EB;
+}
+
+[data-theme="light"] .skills__technologies__card {
+border: 3px solid var(--color-1);
+-webkit-box-shadow: 0;
+-moz-box-shadow: 0;
+box-shadow: 0;
 }
 
 .skills__technologies__card:hover {
