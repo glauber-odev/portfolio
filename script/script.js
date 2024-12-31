@@ -602,14 +602,14 @@ fillCaorouselProjectDetails();
 
 /**
  * Utility function to fill div card wrapper with
- * project data. 
+ * project data.
  */
 function getProjectCard(id) {
   // let cardWrapper;
   let projectCard = document.createElement("div");
   projectCard.classList.add("carousel__project-details__card");
   projectCard.id = "project-n-" + id;
- 
+
   projectCard.innerHTML = formatCardWrapperAndAddLine(id % 2 == 0, id);
 
   return projectCard;
@@ -622,9 +622,9 @@ function getProjectCard(id) {
  * other in right position consecutivelly and return to add
  * at the DOM.
  */
-function formatCardWrapperAndAddLine(even, id){
+function formatCardWrapperAndAddLine(even, id) {
   let projectData = projectsData[id];
-  let cardWrapper
+  let cardWrapper;
   if (even) {
     cardWrapper = `
                 <div class="carousel__project-details__card__wrapper centralize">
@@ -646,7 +646,6 @@ function formatCardWrapperAndAddLine(even, id){
   cardWrapper += '<hr class="carousel__project-details__card__line_divisory"/>';
 
   return cardWrapper;
-
 }
 
 /**

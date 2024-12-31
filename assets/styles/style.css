@@ -644,10 +644,6 @@ span {
     text-align: left;
   }
 
-  .carousel__project-details__card__content__description {
-    /* max-width: none; */
-  }
-
   .carousel__project-details__card__content__link-wrapper-right {
     justify-content: left;
   }
