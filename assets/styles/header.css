@@ -191,8 +191,8 @@ body {
   align-items: center;
 
   position: fixed;
-  right: 60px;
-  bottom: 60px;
+  right: 15px;
+  bottom: 15px;
   visibility: hidden;
 
   transition: 0.2s ease-in-out;

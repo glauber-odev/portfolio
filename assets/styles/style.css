@@ -935,6 +935,47 @@ box-shadow: 0;
 .contact__output__email__infos {
   margin-left: 15px;
 }
+
+/* RESPONSIVIDADE */
+@media (max-width: 450px) {
+
+  .contanct__title {
+    margin-left: 20px;
+  }
+  
+  .contanct__subtitle {
+    margin-left: 20px;
+    font-size: 16pt;
+  }
+  
+
+  .contact__output {
+    display: block;
+    margin-left: 20px;
+  }
+
+  .contact__output img {
+    height: 20px;
+  }
+
+  .contact__output__linkedin__infos__image {
+    height: 40px;
+    width: 40px;
+  }
+
+  .contact__output__email__image {
+    margin-left: 0px;    
+    height: 40px;
+    width: 40px;
+
+  }
+
+  .contact__output__email {
+    margin-top: 20px;
+    margin-left: 0px;
+  }
+
+}
 /* FIM DOBRA CONTATOS */
 
 
@@ -959,12 +1000,12 @@ box-shadow: 0;
   margin-bottom: 100px;
 }
 
-.footeer__branding {
+.footer__branding {
   margin-left: 40px;
   width: 400px;
 }
 
-.footeer__branding img {
+.footer__branding img {
  height: 50px;
  width: 300px;
 }
@@ -1015,6 +1056,39 @@ box-shadow: 0;
 .footer__copyright-paragraph > strong {
   color: var(--color-2);
   font-weight: 700;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 450px){
+  .footer__wrapper {
+    display: block;
+    margin-bottom: 80px;
+  }
+
+  .footer__branding {
+    width: 100%;
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+  }
+
+  .footer__links {    
+    margin-top: 58px;
+    display: block;
+  }
+
+  .footer__links h2 {
+    margin-top: 20px;
+    margin-bottom: 6px;
+  }
+
+  .footer__copyright-paragraph {
+    font-size: 6pt;
+  }
+
 }
 
 /* FIM DOBRA FOOTER */
