@@ -1,5 +1,6 @@
 /* invert color: balck to white <-> */
-[data-theme='light'] .carousel__project-details__card__content a img {
+[data-theme='light'] .carousel__project-details__card__content a img,
+[data-theme='light'] .contact__output img {
   filter: invert();
 }
 
@@ -824,8 +825,6 @@ box-shadow: 0;
     height: 800px;
     grid-template-columns: repeat(auto-fit, minmax(30px, 120px));
     grid-template-rows: repeat(auto-fit, minmax(30px, 120px));
-    /* grid-template-columns: repeat(auto-fit, minmax(30px, 60px));
-    grid-template-rows: repeat(auto-fit, minmax(30px, 60px)); */
     column-gap: 20px;
     row-gap: 10px;
   }
@@ -862,3 +861,85 @@ box-shadow: 0;
 }
 
 /* FIM DOBRA SKILLS */
+
+/* INICIO DOBRA CONTATOS */
+
+.contanct__title {
+  padding-top: 100px;
+  margin-left: 40px;
+  color: var(--color-3);
+  font-size: 30pt;
+  font-weight: 700;
+  transition: all 0.2s;
+  cursor: default;
+}
+
+.contanct__subtitle {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  margin-left: 40px;
+  font-size: 19pt;
+}
+
+.contact__output {
+  display: flex;
+  flex-direction: row;
+  margin-left: 40px;
+  margin-bottom: 150px;
+}
+
+.contact__output img {
+  height: 25px;
+}
+
+.contact__output a {
+  text-decoration: none;
+  font-size: 13pt;
+  color: var(--color-5);
+}
+
+.contact__output a:hover {
+  color: var(--color-3)
+}
+
+.contact__output__linkedin {
+  display: flex;
+  flex-direction: row;
+}
+
+.contact__output__linkedin__infos__image {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 3px solid var(--color-2);
+}
+
+.contact__output__linkedin__infos {
+  margin-left: 15px;
+}
+
+.contact__output__email {
+  display: flex;
+  flex-direction: row;
+  margin-left: 85px;
+}
+
+.contact__output__email__image {
+  margin-left: 10px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 3px solid var(--color-2);
+}
+
+.contact__output__email__infos {
+  margin-left: 15px;
+}
+/* FIM DOBRA CONTATOS */
+
+
+/* INICIO DOBRA FOOTER */
+.footer__container {
+  height: 500px;
+}
+/* FIM DOBRA FOOTER */

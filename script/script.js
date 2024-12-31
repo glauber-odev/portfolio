@@ -719,9 +719,21 @@ function getProjectCardsectionDescription(projectData, odd) {
 }
 
 /**
- * CAROUSEL ENE SECOND VIEW
+ * CAROUSEL END SECOND VIEW
  */
 
 /**
  * END CAROUSEL
+ */
+
+/**
+ * BEGIN CONTACT
+ */
+  const btcontactEmail = document.querySelector('.contact__output__email__image');
+
+  btcontactEmail.addEventListener("click", ()=>{
+    copyMailAdress();
+  })
+/**
+ * END CONTACT
  */
