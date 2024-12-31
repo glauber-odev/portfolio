@@ -602,20 +602,30 @@ fillCaorouselProjectDetails();
 
 /**
  * Utility function to fill div card wrapper with
- * project data. it recives the projects id and fetch its
+ * project data. 
+ */
+function getProjectCard(id) {
+  // let cardWrapper;
+  let projectCard = document.createElement("div");
+  projectCard.classList.add("carousel__project-details__card");
+  projectCard.id = "project-n-" + id;
+ 
+  projectCard.innerHTML = formatCardWrapperAndAddLine(id % 2 == 0, id);
+
+  return projectCard;
+}
+
+/**
+ * Utility function to formaet presentation of document.
+ * it recives the projects id and fetch its
  * informations. One div present with image in left position
  * other in right position consecutivelly and return to add
  * at the DOM.
  */
-function getProjectCard(id) {
+function formatCardWrapperAndAddLine(even, id){
   let projectData = projectsData[id];
-  let cardWrapper;
-  let projectCard = document.createElement("div");
-  projectCard.classList.add("carousel__project-details__card");
-  projectCard.id = "project-n-" + id;
-
-  // transformar em função
-  if (id % 2 == 0) {
+  let cardWrapper
+  if (even) {
     cardWrapper = `
                 <div class="carousel__project-details__card__wrapper centralize">
                   ${
@@ -634,9 +644,9 @@ function getProjectCard(id) {
   }
 
   cardWrapper += '<hr class="carousel__project-details__card__line_divisory"/>';
-  projectCard.innerHTML = cardWrapper;
 
-  return projectCard;
+  return cardWrapper;
+
 }
 
 /**

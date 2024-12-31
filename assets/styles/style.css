@@ -490,7 +490,6 @@ span {
   font-size: 12pt;
   margin-bottom: 20px;
   color: var(--color-5);
-  /* max-height: 112px; */
   overflow: auto;
 }
 
