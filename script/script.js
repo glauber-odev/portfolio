@@ -614,6 +614,7 @@ function getProjectCard(id) {
   projectCard.classList.add("carousel__project-details__card");
   projectCard.id = "project-n-" + id;
 
+  // transformar em função
   if (id % 2 == 0) {
     cardWrapper = `
                 <div class="carousel__project-details__card__wrapper centralize">
@@ -621,7 +622,6 @@ function getProjectCard(id) {
                     getProjectCardsectionPreviewImg(projectData) +
                     getProjectCardsectionDescription(projectData, false)
                   }
-                  <hr class="carousel__project-details__card__line_divisory" />
                 </div>`;
   } else {
     cardWrapper = `
@@ -630,9 +630,10 @@ function getProjectCard(id) {
                     getProjectCardsectionDescription(projectData, true) +
                     getProjectCardsectionPreviewImg(projectData)
                   }
-                  <hr class="carousel__project-details__card__line_divisory" />
                 </div>`;
   }
+
+  cardWrapper += '<hr class="carousel__project-details__card__line_divisory"/>';
   projectCard.innerHTML = cardWrapper;
 
   return projectCard;

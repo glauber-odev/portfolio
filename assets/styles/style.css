@@ -472,7 +472,7 @@ span {
   width: 480px;
   margin: 4px;
   margin-bottom: 30px;
-  height: 260px;
+  min-height: 260px;
 }
 
 .carousel__project-details__card__content-right {
@@ -490,7 +490,7 @@ span {
   font-size: 12pt;
   margin-bottom: 20px;
   color: var(--color-5);
-  max-height: 112px;
+  /* max-height: 112px; */
   overflow: auto;
 }
 
@@ -600,7 +600,7 @@ span {
   }
 
   .carousel__project-details__card {
-    height: 600px;
+    min-height: 600px;
   }
 
   .carousel__bt-toggle-view {
@@ -642,6 +642,10 @@ span {
 
   .carousel__project-details__card__content-right {
     text-align: left;
+  }
+
+  .carousel__project-details__card__content__description {
+    /* max-width: none; */
   }
 
   .carousel__project-details__card__content__link-wrapper-right {
