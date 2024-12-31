@@ -593,7 +593,7 @@ carouselProjectDetailsCard.classList.add("carousel__project-details__card");
  * including description, title, image, etc.
  * and add at the document.
  */
-function fillCaorouselProjectDetails(){
+function fillCaorouselProjectDetails() {
   for (let i = 0; i <= projectsData.length - 1; i++) {
     carouselProjectDetails.appendChild(getProjectCard(i));
   }
@@ -663,9 +663,11 @@ function getProjectCardsectionPreviewImg(projectData) {
 function getProjectCardsectionDescription(projectData, odd) {
   let sectionCardContent;
   let concatTehnologies = "";
-  let justifyItemsRight = [ "carousel__project-details__card__content-right",
-                            "carousel__project-details__card__content__link-wrapper-right"]
-  if(!odd){
+  let justifyItemsRight = [
+    "carousel__project-details__card__content-right",
+    "carousel__project-details__card__content__link-wrapper-right",
+  ];
+  if (!odd) {
     justifyItemsRight = "";
   }
 
@@ -731,11 +733,11 @@ function getProjectCardsectionDescription(projectData, odd) {
 /**
  * BEGIN CONTACT
  */
-  const btcontactEmail = document.querySelector('.contact__output__email__image');
+const btcontactEmail = document.querySelector(".contact__output__email__image");
 
-  btcontactEmail.addEventListener("click", ()=>{
-    copyMailAdress();
-  })
+btcontactEmail.addEventListener("click", () => {
+  copyMailAdress();
+});
 /**
  * END CONTACT
  */
