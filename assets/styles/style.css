@@ -956,6 +956,7 @@ box-shadow: 0;
 .footer__wrapper {
   display: flex;
   flex-direction: row;
+  margin-bottom: 100px;
 }
 
 .footeer__branding {
@@ -975,6 +976,7 @@ box-shadow: 0;
 }
 
 .footer__links {
+  margin-left: 20px;
   display: flex;
   flex-direction: row;
 }
@@ -1001,6 +1003,18 @@ box-shadow: 0;
 
 .footer__links > div:not(:last-child) {
   margin-right: 180px;
+}
+
+.footer__copyright-paragraph {
+  text-align: center;
+  font-size: 11pt;
+  font-weight: 400;
+  padding-bottom: 25px;
+}
+
+.footer__copyright-paragraph > strong {
+  color: var(--color-2);
+  font-weight: 700;
 }
 
 /* FIM DOBRA FOOTER */
