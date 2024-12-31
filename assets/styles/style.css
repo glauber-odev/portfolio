@@ -696,7 +696,7 @@
   width: 65%;
   display: grid;
   height: 700px;
-  /* max-height: 600px; */
+  /* sempre procura ocupar o tamanho do parâmetro máximo */
   grid-template-columns: repeat(auto-fit, minmax(106px, 150px));
   grid-template-rows: repeat(auto-fit, minmax(118px, 150px));
   column-gap: 30px;
@@ -816,21 +816,27 @@ box-shadow: 0;
 @media (max-width: 450px) {
 
   .skills__container {
-    height: 1600px;
-    max-height: 1600px;
+    height: 1320px;
+    max-height: 1320px;
+  }
+
+  .skills__title {
+    margin-left: 10px;
   }
 
   .skills__technologies {
     width: auto;
-    height: 800px;
-    grid-template-columns: repeat(auto-fit, minmax(30px, 120px));
-    grid-template-rows: repeat(auto-fit, minmax(30px, 120px));
+    height: 500px;
+    grid-template-columns: repeat(auto-fit, minmax(30px, 105px));
+    grid-template-rows: repeat(auto-fit, minmax(30px, 105px));
     column-gap: 20px;
     row-gap: 10px;
   }
 
   .skills__wrapper {
     flex-direction: column;
+    width: 95%;
+    margin-left: 10px;
   }
 
   .skills__technologies__card > img {
@@ -839,6 +845,10 @@ box-shadow: 0;
 
   .skills__technologies__card > h2 {
     font-size: 13pt;
+  }
+
+  .skills__services__front-end {
+    margin-left: 0px;
   }
 
   .skills__services__front-end > img {
