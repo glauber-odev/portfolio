@@ -653,7 +653,7 @@
 
   .carousel__project-details__card__line_divisory {
     margin-top: 15px;
-    width: 95%;
+    width: 97%;
     height: 4px;
     background-color: var(--color-3);
   }
@@ -939,7 +939,68 @@ box-shadow: 0;
 
 
 /* INICIO DOBRA FOOTER */
-.footer__container {
-  height: 500px;
+
+.footer__line {
+  margin: 0 auto;
+  margin-bottom: 30px;
+  width: 95%;
+  height: 3px;
+  background-color: var(--color-2);
+  border-radius: 3px;
 }
+
+.footer__container {
+  height: 260px;
+}
+
+.footer__wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.footeer__branding {
+  margin-left: 40px;
+  width: 400px;
+}
+
+.footeer__branding img {
+ height: 50px;
+ width: 300px;
+}
+
+.footer__summary {
+  text-align: center;
+  margin-top: 30px;
+  width: 300px;
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer__links h2 {
+  font-size: 16pt;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.footer__links ul > li {
+  list-style: none;
+}
+
+.footer__links a {
+  text-decoration: none;
+  color: var(--color-5);
+  transition: .3s;
+}
+
+.footer__links a:hover {
+  color: #0170B9;
+}
+
+.footer__links > div:not(:last-child) {
+  margin-right: 180px;
+}
+
 /* FIM DOBRA FOOTER */

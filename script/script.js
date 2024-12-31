@@ -356,7 +356,9 @@ function defineUrlDriveDownload(CV_ELEMENT) {
 }
 
 const linkCv = document.querySelector(".whoami__links__cv");
+const footerlinkCv = document.querySelector(".footer__links__professional__cv");
 defineUrlDriveDownload(linkCv);
+defineUrlDriveDownload(footerlinkCv);
 /**
  * START CHANGE CV DOWNLOAD LINK
  */
