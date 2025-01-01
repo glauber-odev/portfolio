@@ -247,6 +247,18 @@ buttonToggleTheme.addEventListener("click", (event) => {
  * END THEME CHANGER SCRIPT
  */
 
+document.addEventListener("scroll", () => {
+  let currentPosition = window.scrollY;
+  const AFTER_BANNER_POSITION = 600;
+
+  if (currentPosition >= AFTER_BANNER_POSITION) {
+    showBackStartBt(true);
+    hideHeader(currentPosition);
+  } else {
+    showBackStartBt(false);
+  }
+});
+
 /**
  * START BACK-START BUTTON
  */
@@ -255,22 +267,47 @@ buttonToggleTheme.addEventListener("click", (event) => {
  * this listener show or hide
  * arrow to go to the top of the page
  */
-document.addEventListener("scroll", () => {
-  let position = window.scrollY;
-  const AFTER_BANNER_POSITION = 600;
+
+function showBackStartBt(show) {
   const backStartIcon = document.querySelector(".back-start-icon__container");
 
-  if (position >= AFTER_BANNER_POSITION) {
+  if (show) {
     backStartIcon.style.visibility = "visible";
     backStartIcon.style.opacity = "1";
   } else {
     backStartIcon.style.visibility = "hidden";
     backStartIcon.style.opacity = "0";
   }
-});
+}
 
 /**
  * END BACK-START BUTTON
+ */
+
+/**
+ * START SCROLL HIDE MENU
+ */
+
+/**
+ * this function hide header when scroll down
+ * to improve user experience if the page
+ * is after banner start image.
+ */
+
+let lastScrollPosition = window.scrollY;
+
+function hideHeader(currentPosition) {
+  if (currentPosition > lastScrollPosition) {
+    document.querySelector(".header").style.transform = "translateY(-90px)";
+  } else {
+    document.querySelector(".header").style.transform = "translateY(0)";
+  }
+
+  lastScrollPosition = currentPosition;
+}
+
+/**
+ * END SCROLL HIDE MENU
  */
 
 /**
