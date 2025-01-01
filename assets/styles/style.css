@@ -275,14 +275,12 @@
   justify-content: center;
   height: 800px;
   flex-direction: column;
-  margin-top: 20px;
 }
 
 .carousel__container__introduce-elements {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 30px;
 }
 
 .carousel__container__title {
@@ -462,7 +460,8 @@ span {
   overflow-y: auto;
   margin-left: 30px;
   margin-right: 30px;
-  max-height: 600px;
+  max-height: 550px;
+  margin-bottom: 50px;
 }
 
 .carousel__project-details__card {
