@@ -703,9 +703,9 @@ span {
   border-radius: 7px;
   flex-direction: column;
   transition: 0.2s ease-in-out;
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 10px 10px 2px rgba(104, 243, 39, 1);
+  -moz-box-shadow: 0px 10px 10px 2px rgba(104, 243, 39, 1);
+  box-shadow: 0px 10px 10px 2px rgba(104, 243, 39, 1);
 }
 
 [data-theme="dark"] .skills__technologies__card {
@@ -720,9 +720,9 @@ span {
 }
 
 .skills__technologies__card:hover {
-  color: var(--color-3);
-  border: 3px solid var(--color-3);
-  transform: scale(1.15);
+  -webkit-box-shadow: 0px 10px 10px 2px rgba(104, 243, 39, 1);
+  -moz-box-shadow: 0px 10px 10px 2px rgba(104, 243, 39, 1);
+  box-shadow: 0px 10px 10px 2px rgba(104, 243, 39, 1);
 }
 
 [data-theme="dark"] .skills__technologies__card:hover {
@@ -733,6 +733,10 @@ span {
 
 .skills__technologies__card > img {
   height: 70px;
+}
+
+[data-theme="dark"] .skills__technologies__card > img {
+  filter: invert();
 }
 
 .skills__technologies__card > h2 {
@@ -761,6 +765,9 @@ span {
 
 .skills__services__front-end:hover {
   transform: translateY(-25px);
+  -webkit-box-shadow: 0px 10px 10px 2px rgba(104, 243, 39, 1);
+  -moz-box-shadow: 0px 10px 10px 2px rgba(104, 243, 39, 1);
+  box-shadow: 0px 10px 10px 2px rgba(104, 243, 39, 1);
 }
 
 .skills__services__front-end > img {
@@ -794,6 +801,9 @@ span {
 
 .skills__services__back-end:hover {
   transform: translateY(-25px);
+  -webkit-box-shadow: 0px 10px 10px 2px rgba(104, 243, 39, 1);
+  -moz-box-shadow: 0px 10px 10px 2px rgba(104, 243, 39, 1);
+  box-shadow: 0px 10px 10px 2px rgba(104, 243, 39, 1);
 }
 
 .skills__services__back-end > img {
@@ -938,6 +948,7 @@ span {
   width: 50px;
   border-radius: 50%;
   border: 3px solid var(--color-2);
+  cursor: pointer;
 }
 
 .contact__output__email__infos {
