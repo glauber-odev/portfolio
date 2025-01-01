@@ -892,11 +892,16 @@ span {
   cursor: default;
 }
 
+.contanct__title:hover {
+  color: var(--color-2);
+}
+
 .contanct__subtitle {
   margin-top: 15px;
   margin-bottom: 20px;
   margin-left: 40px;
   font-size: 19pt;
+  animation: float 2s ease-in-out infinite;
 }
 
 .contact__output {
@@ -904,6 +909,7 @@ span {
   flex-direction: row;
   margin-left: 40px;
   margin-bottom: 150px;
+  transition: .5s ease-in-out;
 }
 
 .contact__output img {
@@ -930,6 +936,11 @@ span {
   width: 50px;
   border-radius: 50%;
   border: 3px solid var(--color-2);
+  transition: .5s;
+}
+
+.contact__output__linkedin__infos__image:hover {
+  transform: scale(1.1);
 }
 
 .contact__output__linkedin__infos {
@@ -949,6 +960,11 @@ span {
   border-radius: 50%;
   border: 3px solid var(--color-2);
   cursor: pointer;
+  transition: .5s;
+}
+
+.contact__output__email__image:hover {
+  transform: scale(1.1);
 }
 
 .contact__output__email__infos {
@@ -1104,3 +1120,27 @@ span {
 }
 
 /* FIM DOBRA FOOTER */
+
+/* KEYFRAMES */
+
+@keyframes float {
+  0% {
+      transform: translateY(0);
+  }
+
+  35%{
+      transform: translateY(-8px);
+  }
+
+  45% {
+      transform: translateY(0px);
+  }
+
+  55% {
+      transform: translateY(-8px);
+  }
+
+  65% {
+      transform: translateY(0);
+  }
+}
