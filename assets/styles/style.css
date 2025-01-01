@@ -64,6 +64,11 @@
   overflow: auto;
   opacity: 0.8;
   cursor: default;
+  transition: 0.4s all ease-in-out;
+}
+
+.banner__content-wrapper__title:hover {
+  color: var(--color-3);
 }
 
 .banner__content-wrapper__sub-title {
@@ -111,8 +116,11 @@
 }
 
 .banner__content-wrapper__know-more > p:hover {
-  transform: scale(1.03);
+  transform: scale(1.10);
   transition: all 0.4s ease-in-out;
+  color: #FFF;
+  background-color: var(--color-5);
+  border: 2px solid #FFF;
 }
 
 .banner__content-wrapper__title:hover,
