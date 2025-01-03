@@ -53,6 +53,36 @@ const projectsData = [
       "Este projeto é uma landing page com o estilo de sites de streaming de filmes utilizando o tridente básico do desenvolvimento web: <strong>HTML, CSS e JavaScript</strong>. O tema foi a série lançada do jogo The Last of Us, feito com ajuda dos conhecimentos em desenvolvimento web fornecidos pela Kenzie Academy. Meu primeiro projeto Web.",
   },
 ];
+
+/**
+ * BEGIN LAZY LOAD
+ */
+
+ const lazySections = document.querySelectorAll(".lazy-load");
+
+ const lazyOptions = {
+    root: null, //pega o tamanhno da viewport
+    threshold: 0.2 //ativa quando 20% do elemento está visível
+ }
+
+ const observer = new IntersectionObserver((entries) => {
+  entries.forEach( entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.remove('lazy-load'); //retirar a classe lazy load
+
+      observer.unobserve(entry.target);
+    }
+  })
+ }, lazyOptions)
+
+ lazySections.forEach( section => {
+  observer.observe(section);
+ })
+
+/**
+ * BEGIN LAZY LOAD
+ */
+
 /**
  * BEGIN HIDE ELEMENT BEHIND CONTATO
  */
