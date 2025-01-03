@@ -333,12 +333,49 @@
   /* seção lazy-load */
   opacity: 1;
   transition: all 2s ease-out;
+  overflow: hidden;
 }
 
 /* inicio lazy load */
 .carousel__container.lazy-load {
   opacity: 0;
 }
+
+.carousel__container .carousel__container__title {
+  opacity: 1;
+  transform: rotateX(0deg);
+  translate: 0px 0px;
+  transition: all 2s ease-out;
+}
+
+.carousel__container.lazy-load .carousel__container__title {
+  opacity: 0;
+  transform: rotateX(180deg);
+  translate: 0px -100px;
+}
+
+.carousel__container .carousel__bt-toggle-view {
+  opacity: 1;
+  transform: translateX(0px);
+  transition: all 2s ease-out;
+}
+
+.carousel__container.lazy-load .carousel__bt-toggle-view {
+  opacity: 0;
+  transform: translateX(700px);
+}
+
+.carousel__container .carousel__container__display-views {
+  opacity: 1;
+  transform: translateX(0px);
+  transition: all 2s ease-out;
+}
+
+.carousel__container.lazy-load .carousel__container__display-views {
+  opacity: 0;
+  transform: translateX(700px);
+}
+
 /* fim lazy load */
 
 .carousel__container__introduce-elements {
@@ -736,7 +773,7 @@ span {
  /* inicio lazy load */
 .skills__container.lazy-load {  
   opacity: 0;
-  transform: translateY(400px);
+  transform: translateY(300px);
 }
 /* fim lazy load */
 
